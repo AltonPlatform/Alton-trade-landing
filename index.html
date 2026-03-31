@@ -1,1036 +1,1009 @@
-<html lang="zxx">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alton — The Decentralized Social Platform</title>
 
-    <title>
-      Alton Trade: The Next-Generation DEX Exchange on TON, Powered by Telegram
-    </title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/favicon/site.webmanifest" />
 
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/favicon/site.webmanifest" />
+  <meta name="author" content="Alton Platform" />
+  <meta property="og:title" content="Alton — The Decentralized Social Platform" />
+  <meta property="og:url" content="https://altons.trade" />
+  <meta property="og:image" content="https://altons.trade/favicon/android-chrome-512x512" />
+  <meta property="og:description" content="Create content, launch your own token and build a community economy — all inside one ecosystem." />
+  <meta property="og:site_name" content="Alton" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Alton — The Decentralized Social Platform" />
+  <meta name="twitter:description" content="Create content, launch your own token and build a community economy — all inside one ecosystem." />
 
-    <meta name="author" content="Alton Trade Team" />
-    <meta
-      property="og:title"
-      content="Alton Trade - Next-Generation DEX on TON Blockchain with Telegram Integration"
-    />
-    <meta property="og:url" content="https://altons.trade" />
-    <meta
-      property="og:image"
-      content="https://altons.trade/favicon/android-chrome-512x512"
-    />
-    <meta
-      property="og:description"
-      content="Discover Alton Trade, the next-generation decentralized exchange (DEX) on the TON Blockchain, fully integrated with Telegram for seamless and secure cryptocurrency trading."
-    />
-    <meta property="og:site_name" content="Alton Trade" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta
-      name="twitter:title"
-      content="Alton Trade - Trade Cryptocurrencies on TON Blockchain via Telegram"
-    />
-    <meta
-      name="twitter:description"
-      content="Join Alton Trade to experience a new way of decentralized trading on the TON Blockchain, directly within Telegram."
-    />
-    <meta
-      name="twitter:image"
-      content="https://altons.trade/favicon/android-chrome-512x512"
-    />
-    <meta id="tw_url" name="twitter:url" content="https://www.altons.trade" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Orbitron:wght@900&display=swap" rel="stylesheet" />
 
-    <link href="/css/main.css" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        screens: {
+          xs: '480px',
+          sm: '640px',
+          md: '768px',
+          lg: '1280px',
+          xl: '1440px',
+          '2xl': '1536px',
+        },
+        extend: {
+          colors: {
+            brand: {
+              bg: '#101828',
+              card: '#1B2537',
+              'card-dark': '#2B374F',
+              border: '#334155',
+              glow: '#313C4F',
+              accent: '#7621E6',
+              'accent-light': '#BB86FF',
+              /* hover / pressed — Figma node 7902:22192 */
+              'accent-hover': '#5511AF',
+              'accent-active': '#471093',
+              muted: '#989BA2',
+              footer: '#0F1116',
+              'green-bg': '#0F2A2F',
+              'green-border': 'rgba(8,255,122,0.24)',
+              'yellow-bg': '#272C26',
+              'yellow-border': 'rgba(243,225,24,0.24)',
+              'timeline-green': '#0D5D41',
+              'timeline-yellow': '#585723',
+            }
+          },
+          fontFamily: {
+            orbitron: ['Orbitron', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+          borderRadius: {
+            'card-sm': '16px',
+            'card-md': '24px',
+            'card-lg': '40px',
+            'hero': '64px',
+          }
+        }
+      }
+    }
+  </script>
 
-    <link href="/css/responsive.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/css/default.css" />
-  </head>
-  <body
-    class=""
-    data-aos-easing="ease"
-    data-aos-duration="400"
-    data-aos-delay="0"
-  >
-    <header
-      id="mainheader"
-      class="pt-3 pb-4 aos-init aos-animate"
-      data-aos="fade-down"
-      data-aos-delay="500"
-    >
-      <div class="container">
-        <div class="row align-items-center justify-content-between">
-          <div class="col-lg-2">
-            <div class="logwrap">
-              <a href="#" class="logwrap__brandlink">
-                <img
-                  alt="logo"
-                  src="/asset/page/alton-logo-site.svg"
-                  class="img-fluid logowrap__img"
-                />
-              </a>
-            </div>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: #101828; color: #fff; }
 
-            <div class="navicon d-block d-lg-none">
-              <div class="navicon__bar"></div>
-            </div>
-          </div>
+    #header {
+      background-color: transparent;
+      backdrop-filter: blur(0px) saturate(100%);
+      -webkit-backdrop-filter: blur(0px) saturate(100%);
+      transition:
+        background-color 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        backdrop-filter 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+        -webkit-backdrop-filter 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    #header.glass-active {
+      background-color: rgba(16, 24, 40, 0.75);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+    }
 
-          <div
-            class="col-lg-8 d-none text-xl-center d-lg-flex justify-content-lg-center justify-content-xl-center"
-          >
-            <nav class="mainnav">
-              <ul class="mainnav__list">
-                <li><a class="nav-link active" href="#herosection">Home</a></li>
-                <li><a class="nav-link" href="#aboutsection">About</a></li>
-                <li><a class="nav-link" href="#servicesection">Roadmap</a></li>
-                <li>
-                  <a class="nav-link" href="#testimonialsection">Partners</a>
-                </li>
-                <li>
-                  <a class="nav-link" target="_blank" rel="nofollow" href="https://alton-trade.gitbook.io/whitepaper">Whitepaper</a>
-                </li>
-              </ul>
-            </nav>
-          </div>
+    .fade-up {
+      opacity: 0;
+      translate: 0 30px;
+      transition: opacity 0.7s ease, translate 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      translate: 0 0;
+    }
 
-          <div class="col-lg-2 text-right d-none d-lg-block">
-            <a href="https://bit.ly/altontrader" class="btn btnlinklight">Start Mining</a>
-          </div>
-        </div>
-      </div>
+    .glow-blob {
+      position: absolute;
+      border-radius: 9999px;
+      background: #313C4F;
+      filter: blur(100px);
+      pointer-events: none;
+    }
 
-      <div class="mobilenav">
-        <div class="mobilenav__wrap">
-          <nav>
-            <ul class="mobilenav__wrap-list navigation">
-              <li>
-                <a href="#" class="nav-link"> INTRO. </a>
-              </li>
-              <li>
-                <a href="#aboutsection" class="nav-link"> ABOUT US. </a>
-              </li>
-              <li>
-                <a href="#servicesection" class="nav-link"> ROADMAP. </a>
-              </li>
-              <li>
-                <a class="nav-link" href="#testimonialsection">
-                  PARTNERS.
-                </a>
-              </li>
-              <li>
-                <a class="nav-link" target="_blank" rel="nofollow" href="https://alton-trade.gitbook.io/whitepaper">Whitepaper</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-        <div class="col-lg-2 text-right mt-auto mx-auto d-lg-none d-block">
-            <a href="https://bit.ly/altontrader" class="btn btnlinklight">Start Mining</a>
-          </div>
-      </div>
-    </header>
+    .tab-active {
+      background: #fff;
+      color: #1B2537;
+    }
 
-    <div id="preloader" >
-      <div id="preloader__status">
-        <div class="preloader__position loaderme">
-          <span></span>
-        </div>
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-12px); }
+    }
+    .animate-float { animation: float 6s ease-in-out infinite; }
+    .animate-float-slow { animation: float 9s ease-in-out infinite; }
+
+    /* max() в arbitrary property ломается на Tailwind CDN — чистый CSS, lg = theme screens.lg */
+    @media (min-width: 1280px) {
+      img.ecosystem-ipad-mockup-right {
+        right: max(-20%, -100px);
+      }
+    }
+
+    .tab-panel { transition: opacity 0.4s ease, transform 0.4s ease; }
+    .tab-panel.hidden { display: none; }
+
+    .roadmap-phase {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+    }
+    .roadmap-phase.phase-visible { opacity: 1; transform: translateY(0); }
+    .roadmap-icon {
+      transform: scale(0.6);
+      opacity: 0;
+      transition: transform 0.5s cubic-bezier(0.34,1.56,0.64,1) 0.2s, opacity 0.4s ease 0.2s;
+    }
+    .roadmap-phase.phase-visible .roadmap-icon { transform: scale(1); opacity: 1; }
+    .roadmap-label {
+      opacity: 0; transform: translateX(-20px);
+      transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
+    }
+    .roadmap-phase.phase-visible .roadmap-label { opacity: 1; transform: translateX(0); }
+    .roadmap-content {
+      opacity: 0; transform: translateX(30px);
+      transition: opacity 0.5s ease 0.3s, transform 0.5s ease 0.3s;
+    }
+    .roadmap-phase.phase-visible .roadmap-content { opacity: 1; transform: translateX(0); }
+
+    .roadmap-seg {
+      transition: height 0.12s linear;
+    }
+  </style>
+</head>
+
+<body class="bg-brand-bg antialiased overflow-x-hidden">
+
+  <!-- ====== HEADER ====== -->
+  <header id="header" class="fixed top-0 left-0 w-full z-50">
+    <div class="px-4 md:px-8">
+      <div class="max-w-[1440px] mx-auto flex items-center justify-between px-2 lg:px-[144px] h-[80px]">
+        <a href="#" class="shrink-0">
+          <img src="/asset/new/logo.svg" alt="Alton" class="h-[44px] w-auto" />
+        </a>
+
+        <nav class="hidden lg:flex items-center gap-8">
+          <a href="#solution" class="text-white text-base hover:text-brand-accent-light transition-colors">Solution</a>
+          <a href="#ecosystem" class="text-white text-base hover:text-brand-accent-light transition-colors">Ecosystem</a>
+          <a href="#how-it-works" class="text-white text-base hover:text-brand-accent-light transition-colors">How it works</a>
+          <a href="#why-alton" class="text-white text-base hover:text-brand-accent-light transition-colors">Why Alton</a>
+          <a href="#roadmap" class="text-white text-base hover:text-brand-accent-light transition-colors">Roadmap</a>
+        </nav>
+
+        <a href="http://waitlist.altons.trade/" class="hidden lg:inline-flex items-center justify-center bg-brand-accent text-white text-sm font-medium capitalize px-4 py-2.5 rounded-lg hover:bg-brand-accent-hover active:bg-brand-accent-active transition-colors duration-200">
+          Join waitlist
+        </a>
+
+        <button id="burger" class="lg:hidden relative w-8 h-8 flex flex-col items-center justify-center gap-1.5" aria-label="Toggle menu">
+          <span class="burger-line w-6 h-0.5 bg-white transition-all duration-300 origin-center"></span>
+          <span class="burger-line w-6 h-0.5 bg-white transition-all duration-300"></span>
+          <span class="burger-line w-6 h-0.5 bg-white transition-all duration-300 origin-center"></span>
+        </button>
       </div>
     </div>
 
-    <main id="mainwrap">
-      <canvas width="1189" height="813"></canvas>
+    <!-- Mobile nav -->
+    <div id="mobile-nav" class="hidden lg:hidden bg-brand-bg/95 backdrop-blur-xl border-t border-brand-border">
+      <div class="px-4 md:px-8">
+        <div class="max-w-[1440px] mx-auto px-2 flex flex-col items-center gap-6 py-8">
+        <a href="#solution" class="text-white text-lg font-medium mobile-link">Solution</a>
+        <a href="#ecosystem" class="text-white text-lg font-medium mobile-link">Ecosystem</a>
+        <a href="#how-it-works" class="text-white text-lg font-medium mobile-link">How it works</a>
+        <a href="#why-alton" class="text-white text-lg font-medium mobile-link">Why Alton</a>
+        <a href="#roadmap" class="text-white text-lg font-medium mobile-link">Roadmap</a>
+        <a href="http://waitlist.altons.trade/" class="mt-2 inline-flex items-center justify-center bg-brand-accent text-white text-base font-medium capitalize px-6 py-3 rounded-lg hover:bg-brand-accent-hover active:bg-brand-accent-active transition-colors duration-200 mobile-link">Join waitlist</a>
+        </div>
+      </div>
+    </div>
+  </header>
 
-      <section id="herosection" class="sectionblock">
-        <div class="container">
-          <div class="row">
-            <div
-              class="col-lg-7 order-1 order-lg-0 align-items-center justify-content-left d-flex"
-            >
-              <div
-                class="herocontent text-center text-sm-start aos-init aos-animate"
-                data-aos="fade-up"
-                data-aos-delay="100"
-              >
-                <p
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                  class="aos-init aos-animate"
-                >
-                  FUTURE CRYPTO TRADING
-                </p>
-                <h1
-                  class="herocontent__tagline mb-4 aos-init aos-animate"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
-                  Earn the First Native DEX Token on TON!
-                </h1>
-                <p
-                  class="mb-5 detail aos-init aos-animate"
-                  data-aos="fade-up"
-                  data-aos-delay="500"
-                >
-                  Train your Alton Trader in our Telegram mini-app and be among
-                  the first to earn native DEX tokens on TON. Start now and join
-                  the future of decentralized trading!
-                </p>
-                <a href="https://bit.ly/altontrader" class="btn btnlinkdark"> Getting Started </a>
-                <!-- <a
-                  href="https://www.youtube.com/watch?v=cPEr-44-WwM"
-                  class="btn btnlinkvideo ml-3 mt-lg-0 mt-3 glightboxvideo"
-                  data-glightbox="type: video"
-                >
-                  <i class="fa-solid fa-play"></i> Watch Video
-                </a> -->
-              </div>
+  <main>
+
+    <!-- ====== HERO ====== -->
+    <section id="hero" class="relative pt-[120px] md:pt-[136px] px-4 md:px-8">
+      <div class="max-w-[1376px] mx-auto bg-brand-card border border-brand-border rounded-[32px] md:rounded-hero overflow-hidden relative min-h-[480px] md:min-h-[600px] lg:min-h-[680px]">
+        <!-- Glow blob -->
+        <div class="glow-blob w-[300px] h-[300px] md:w-[524px] md:h-[524px] right-[-50px] md:right-[50px] bottom-[-100px] md:bottom-[20px] opacity-60"></div>
+
+        <!-- Decorative cards (desktop) -->
+        <div class="hidden lg:block">
+          <div class="absolute bg-brand-card-dark rounded-card-md w-[271px] h-[255px] right-[200px] top-[-138px] overflow-hidden">
+            <video src="https://videos.pexels.com/video-files/7815097/7815097-uhd_1440_2560_30fps.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+          </div>
+          <div class="absolute bg-brand-card-dark rounded-card-md w-[271px] h-[325px] right-[200px] top-[141px] overflow-hidden">
+            <video src="https://videos.pexels.com/video-files/7599377/7599377-uhd_1440_2732_25fps.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+          </div>
+          <div class="absolute bg-brand-card-dark rounded-card-md w-[271px] h-[325px] right-[200px] top-[490px] overflow-hidden">
+            <video src="https://videos.pexels.com/video-files/6878202/6878202-uhd_1440_2732_25fps.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+          </div>
+          <div class="absolute bg-brand-card-dark rounded-card-md w-[271px] h-[357px] right-[-105px] top-[-20px] overflow-hidden">
+            <video src="https://videos.pexels.com/video-files/6883832/6883832-uhd_1440_2732_25fps.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+          </div>
+          <div class="absolute bg-brand-card-dark rounded-card-md w-[271px] h-[325px] right-[-105px] top-[361px] overflow-hidden">
+            <video src="https://videos.pexels.com/video-files/9071402/9071402-hd_1080_1920_25fps.mp4" autoplay loop muted playsinline class="w-full h-full object-cover"></video>
+          </div>
+        </div>
+
+        <div class="relative z-10 px-6 md:px-16 lg:px-[112px] py-12 md:py-16 flex flex-col gap-6 max-w-full lg:max-w-[60%]">
+          <h1 class="font-orbitron font-black text-[32px] md:text-[48px] lg:text-[68px] leading-[1.2] text-white fade-up">
+            The Decentralized Social Platform
+          </h1>
+
+          <p class="text-brand-muted text-base md:text-lg leading-relaxed max-w-[466px] fade-up">
+            Create content, launch your own token and build a community economy — all inside one ecosystem.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 fade-up">
+            <a href="http://waitlist.altons.trade/" class="inline-flex items-center justify-center gap-2.5 bg-brand-accent text-white text-base md:text-lg font-medium capitalize px-6 py-3 rounded-lg hover:bg-brand-accent-hover active:bg-brand-accent-active transition-colors duration-200 w-full sm:w-[270px]">
+              Join waitlist
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m0 0l-6-6m6 6l-6 6"/></svg>
+            </a>
+            <a href="#ecosystem" class="inline-flex items-center justify-center border border-brand-border text-white text-base md:text-lg font-semibold px-6 py-3 rounded-lg hover:bg-white/5 transition-colors w-full sm:w-[270px]">
+              Explore Ecosystem
+            </a>
+          </div>
+
+          <div class="bg-white/[0.08] rounded-card-md px-6 md:px-8 pt-4 pb-5 max-w-[466px] fade-up">
+            <p class="text-white text-xl md:text-[32px] font-inter font-medium leading-relaxed">
+              Launch date — <span class="text-brand-accent-light">Q3</span>, 2026
+            </p>
+            <p class="text-white/80 text-sm md:text-base font-light mt-2 leading-relaxed">
+              Claim your spot on the waitlist.<br />
+              Enjoy exclusive rewards in the first release.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== PROBLEMS ====== -->
+    <section id="problems" class="py-16 md:py-24 px-4 md:px-8">
+      <div class="max-w-[1440px] mx-auto px-2 lg:px-[144px]">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8 mb-8 md:mb-10 lg:items-start">
+          <h2 class="font-orbitron font-black text-[32px] md:text-[48px] leading-[1.2] text-white fade-up lg:col-span-1">Problems</h2>
+          <p class="text-brand-muted text-base leading-relaxed max-w-[400px] lg:max-w-none fade-up lg:col-span-2">
+            Millions of creators build audiences online, but most of the value goes to platforms
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div class="bg-brand-card border border-brand-border rounded-card-md p-6 relative overflow-hidden fade-up">
+            <div class="glow-blob w-[136px] h-[136px] -left-[40px] -top-[20px] opacity-50"></div>
+            <h3 class="font-orbitron font-black text-lg leading-[1.2] text-white relative z-10 mb-3">Creators don't own their audience</h3>
+            <p class="text-brand-muted text-sm leading-relaxed relative z-10">Platforms control reach, algorithms and monetization.</p>
+          </div>
+          <div class="bg-brand-card border border-brand-border rounded-card-md p-6 relative overflow-hidden fade-up">
+            <div class="glow-blob w-[136px] h-[136px] -left-[40px] -top-[20px] opacity-50"></div>
+            <h3 class="font-orbitron font-black text-lg leading-[1.2] text-white relative z-10 mb-3">Monetization is limited</h3>
+            <p class="text-brand-muted text-sm leading-relaxed relative z-10">High fees and few tools make it hard for creators to earn.</p>
+          </div>
+          <div class="bg-brand-card border border-brand-border rounded-card-md p-6 relative overflow-hidden fade-up">
+            <div class="glow-blob w-[136px] h-[136px] -left-[40px] -top-[20px] opacity-50"></div>
+            <h3 class="font-orbitron font-black text-lg leading-[1.2] text-white relative z-10 mb-3">Communities get no value</h3>
+            <p class="text-brand-muted text-sm leading-relaxed relative z-10">Fans help creators grow but don't share in their success.</p>
+          </div>
+          <div class="bg-brand-card border border-brand-border rounded-card-md p-6 relative overflow-hidden fade-up">
+            <div class="glow-blob w-[136px] h-[136px] -left-[40px] -top-[20px] opacity-50"></div>
+            <h3 class="font-orbitron font-black text-lg leading-[1.2] text-white relative z-10 mb-3">Web3 is too complex</h3>
+            <p class="text-brand-muted text-sm leading-relaxed relative z-10">Wallets, gas fees and crypto mechanics create friction for new users.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== SOLUTION ====== -->
+    <section id="solution" class="pb-16 md:pb-24 px-4 md:px-8">
+      <div class="max-w-[1440px] mx-auto px-2 lg:px-[144px]">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8 mb-8 md:mb-10 lg:items-start">
+          <h2 class="font-orbitron font-black text-[32px] md:text-[48px] leading-[1.2] text-white fade-up lg:col-span-1">Solution</h2>
+          <p class="text-brand-muted text-base leading-relaxed max-w-[466px] lg:max-w-none fade-up lg:col-span-2">
+            A simple platform where creators build communities, launch tokens and grow together with their audience
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <!-- Card 1 -->
+          <div class="bg-brand-card border border-brand-border rounded-card-md h-[220px] md:h-[240px] relative overflow-hidden p-6 md:p-8 flex flex-col justify-end fade-up">
+            <div class="glow-blob w-[284px] h-[284px] -left-[100px] top-1/2 -translate-y-1/2 opacity-40"></div>
+            <img src="/asset/new/solution-platform.svg" alt="" class="absolute right-4 md:right-8 -top-[47px] w-[180px] md:w-[231px] h-auto pointer-events-none" />
+            <h3 class="font-orbitron font-black text-xl leading-[1.2] text-white relative z-10">One social platform</h3>
+            <p class="text-brand-muted text-sm leading-relaxed relative z-10 mt-2">Content, community and token economy in one place.</p>
+          </div>
+          <!-- Card 2 -->
+          <div class="bg-brand-card border border-brand-border rounded-card-md h-[220px] md:h-[240px] relative overflow-hidden p-6 md:p-8 flex flex-col justify-end fade-up">
+            <div class="glow-blob w-[284px] h-[284px] -left-[100px] top-1/2 -translate-y-1/2 opacity-40"></div>
+            <div class="absolute right-8 -top-6 w-[180px] h-[180px]">
+              <div class="w-full h-full rounded-full border-2 border-[#57637f]"></div>
+              <div class="absolute inset-[15%] rounded-full border-2 border-[#57637f]"></div>
+              <div class="absolute inset-[30%] rounded-full border-2 border-[#57637f]"></div>
+              <div class="absolute inset-[45%] rounded-full bg-[#a9b1bf]"></div>
             </div>
-            <div class="col-lg-5 order-0 order-lg-1 mb-5 mb-lg-0 mt-5 mt-lg-0">
-              <div class="heroimg">
-                <img
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                  src="/asset/page/btc.png"
-                  alt="img"
-                  class="aos-init aos-animate"
-                />
-                <img
-                  data-aos="fade-up"
-                  data-aos-delay="600"
-                  src="/asset/page/not.png"
-                  alt="img"
-                  class="aos-init aos-animate"
-                />
-                <img
-                  data-aos="fade-up"
-                  data-aos-delay="900"
-                  src="/asset/page/ton.png"
-                  alt="img"
-                  class="aos-init aos-animate"
-                />
-                <img
-                  data-aos="fade-up"
-                  data-aos-delay="1100"
-                  src="/asset/page/img5.png"
-                  alt="img"
-                  class="aos-init aos-animate"
-                />
+            <h3 class="font-orbitron font-black text-xl leading-[1.2] text-white relative z-10">Creators own their audience</h3>
+            <p class="text-brand-muted text-sm leading-relaxed relative z-10 mt-2">Direct connection with fans and new ways to monetize.</p>
+          </div>
+          <!-- Card 3 -->
+          <div class="bg-brand-card border border-brand-border rounded-card-md h-[220px] md:h-[240px] relative overflow-hidden p-6 md:p-8 flex flex-col justify-end fade-up">
+            <div class="glow-blob w-[284px] h-[284px] -left-[100px] top-1/2 -translate-y-1/2 opacity-40"></div>
+            <img src="/asset/new/solution-economy.svg" alt="" class="absolute right-4 md:right-8 -top-[17px] w-[140px] md:w-[182px] h-auto pointer-events-none" />
+            <h3 class="font-orbitron font-black text-xl leading-[1.2] text-white relative z-10">Built for creator economies</h3>
+            <p class="text-brand-muted text-sm leading-relaxed relative z-10 mt-2">Infrastructure for tokenized communities on TON.</p>
+          </div>
+          <!-- Card 4 -->
+          <div class="bg-brand-card border border-brand-border rounded-card-md h-[220px] md:h-[240px] relative overflow-hidden p-6 md:p-8 flex flex-col justify-end fade-up">
+            <div class="glow-blob w-[284px] h-[284px] -left-[100px] top-1/2 -translate-y-1/2 opacity-40"></div>
+            <div class="absolute right-0 top-[86px] w-[90%] h-[16px] flex items-center">
+              <div class="w-full h-[2px] border-t-2 border-[#57637f]"></div>
+              <div class="absolute left-[12%] w-4 h-4 rounded-full bg-[#a9b1bf]"></div>
+              <div class="absolute left-[49%] w-4 h-4 rounded-full bg-[#a9b1bf]"></div>
+              <div class="absolute left-[86%] w-4 h-4 rounded-full bg-[#a9b1bf]"></div>
+            </div>
+            <h3 class="font-orbitron font-black text-xl leading-[1.2] text-white relative z-10">Simple Web3 experience</h3>
+            <p class="text-brand-muted text-sm leading-relaxed relative z-10 mt-2">Start using Web3 tools easily with Alton Academy</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== ECOSYSTEM ====== -->
+    <section id="ecosystem" class="bg-brand-card py-16 md:py-24 px-4 md:px-8">
+      <div class="max-w-[1440px] mx-auto px-2 lg:px-[144px]">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8 mb-8 md:mb-10 lg:items-start">
+          <h2 class="font-orbitron font-black text-[32px] md:text-[48px] leading-[1.2] text-white fade-up lg:col-span-1">Ecosystem</h2>
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 lg:col-span-2">
+            <p class="text-brand-muted text-base leading-relaxed max-w-[466px] lg:max-w-none fade-up">
+              Three applications that power social creation, token economies and onboarding in crypto
+            </p>
+            <a href="http://waitlist.altons.trade/" class="inline-flex items-center justify-center gap-2.5 bg-brand-accent text-white text-base md:text-lg font-medium capitalize px-6 py-3 rounded-lg hover:bg-brand-accent-hover active:bg-brand-accent-active transition-colors duration-200 shrink-0 w-full sm:w-[270px] fade-up">
+              Join waitlist
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m0 0l-6-6m6 6l-6 6"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Main ecosystem card — clip-path: обрезка только снизу; сверху/бока — вылет -->
+        <div class="relative mb-6 fade-up lg:[clip-path:inset(-200px_-200px_0_-200px_round_24px)]">
+          <div class="bg-brand-card-dark border border-brand-border rounded-card-md overflow-hidden lg:overflow-visible relative">
+            <div class="grid grid-cols-1 sm:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] sm:grid-rows-[auto_1fr] lg:grid-cols-[619fr_533fr] lg:min-h-[320px] items-stretch min-w-0">
+              <div class="relative z-10 order-1 sm:order-none sm:col-start-1 sm:row-start-1 min-w-0 px-4 pt-4 pb-2 sm:p-6 sm:pb-3 md:px-8 md:pt-8 lg:pr-4 xl:pr-6 max-sm:pt-4">
+                <h3 class="font-orbitron font-black text-xl md:text-2xl lg:text-[32px] leading-[1.2] text-white max-w-[420px]">Alton — Social Platform</h3>
+              </div>
+              <div class="relative z-0 order-2 sm:order-none sm:col-start-2 sm:row-start-1 sm:row-span-2 lg:row-span-2 flex items-center justify-center max-sm:min-h-[200px] max-sm:w-full max-sm:py-3 sm:min-h-0 sm:h-full md:min-h-[280px] lg:min-h-0 lg:h-auto lg:block lg:leading-none overflow-hidden lg:overflow-visible min-w-0 self-stretch">
+                <img src="/asset/new/ipad-mockup.png" alt="Alton Social Platform" class="block pointer-events-none max-sm:relative max-sm:right-auto max-sm:top-auto max-sm:bottom-auto max-sm:mx-auto max-sm:w-full max-sm:max-w-none h-auto object-contain animate-float-slow sm:absolute sm:right-[-20px] sm:top-[-10px] sm:w-[280px] sm:max-w-none md:max-w-[440px] lg:w-[662px] lg:max-w-[662px] lg:top-auto lg:bottom-px ecosystem-ipad-mockup-right lg:-mb-[120px] md:mr-[-50px]  md:w-[440px]" />
+              </div>
+              <div class="relative z-10 order-3 sm:order-none sm:col-start-1 sm:row-start-2 min-w-0 px-4 pb-4 sm:p-6 sm:pt-0 md:px-8 md:pb-8 flex flex-col justify-start lg:pr-4 xl:pr-6 lg:pb-8">
+                <p class="text-brand-muted text-xs sm:text-sm md:text-base leading-relaxed mb-2 sm:mb-4 max-w-[555px]">Platform for creators to publish content and build tokenized communities.</p>
+                <ul class="text-brand-muted text-xs sm:text-sm md:text-base leading-relaxed list-disc pl-4 sm:pl-6 space-y-0.5 sm:space-y-1 max-w-[242px]">
+                  <li>Content monetization</li>
+                  <li>Brand (Community) tokens</li>
+                  <li>Direct engagement with fans</li>
+                </ul>
               </div>
             </div>
           </div>
         </div>
-      </section>
 
-      <section id="aboutsection" class="sectionblock pt-5 pb-5">
-        <img
-          src="/asset/page/usdc.png"
-          alt="coin"
-          class="rellax leftcoin"
-          data-rellax-speed="1"
-          style="visibility: visible; transform: translate3d(0px, 0px, 0px)"
-        />
-        <div class="container">
-          <!-- <div class="row justify-content-center text-center">
-            <div class="col-lg-8">
-              <div
-                class="countdown aos-init aos-animate"
-                data-aos="fade-down"
-                data-aos-delay="700"
-              >
-                <h3 class="countdown__title">The Market Will Starts In</h3>
-                <div class="countdown__timer mt-4 mb-4">
-                  <div class="countdown__wraptime">
-                    <span id="days">9336</span>
-                    <span class="countdown__wrapname">DAYS</span>
-                  </div>
-                  <div class="countdown__wraptime">
-                    <span id="hours">22</span>
-                    <span class="countdown__wrapname">HOURS</span>
-                  </div>
-                  <div class="countdown__wraptime">
-                    <span id="minutes">37</span>
-                    <span class="countdown__wrapname">MINUTES</span>
-                  </div>
-                  <div class="countdown__wraptime">
-                    <span id="seconds">14</span>
-                    <span class="countdown__wrapname">SECONDS</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> -->
-          <div class="row">
-            <div class="col-lg-12 pt-5 pb-5">
-              <div
-                class="markettrend__wrap aos-init"
-                data-aos="fade-up"
-                data-aos-delay="500"
-              >
-                <div
-                  id="markettrendslide"
-                  class="markettrend__textcontent keen-slider"
-                >
-                  <div
-                    class="markettrend__item keen-slider__slide"
-                    id="#markettrendslide-1"
-                    style="
-                      min-width: 278.667px;
-                      max-width: 278.667px;
-                      transform: translate3d(0px, 0px, 0px);
-                    "
-                  >
-                    <div class="markettrend__header">
-                      <div class="markettrend__icon">
-                        <img src="/asset/page/ico4.png" alt="icon" />
-                      </div>
-                      <div class="markettrend__detail">
-                        <span class="markettrend__detail-title">BTC</span>
-                        <span class="markettrend__detail-name">BITCOIN</span>
-                      </div>
-                      <div class="markettrend__indicator">
-                        <i class="fa-solid fa-arrow-trend-down"></i>
-                      </div>
-                    </div>
-                    <div class="markettrend__money">
-                      <p class="markettrend__moneybig">$50.500</p>
-                      <span class="markettrend__moneypercen"> 20.8% </span>
-                    </div>
-                  </div>
+        <!-- Two smaller cards -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-4 md:gap-6">
 
-                  <div
-                    class="markettrend__item keen-slider__slide"
-                    id="#markettrendslide-2"
-                    style="
-                      min-width: 278.667px;
-                      max-width: 278.667px;
-                      transform: translate3d(50px, 0px, 0px);
-                    "
-                  >
-                    <div class="markettrend__header">
-                      <div class="markettrend__icon">
-                        <img src="/asset/page/iconton.png" alt="icon" />
-                      </div>
-                      <div class="markettrend__detail">
-                        <span class="markettrend__detail-title">TON</span>
-                        <span class="markettrend__detail-name">TONCOIN</span>
-                      </div>
-                      <div class="markettrend__indicator">
-                        <i class="fa-solid fa-arrow-trend-up"></i>
-                      </div>
-                    </div>
-                    <div class="markettrend__money">
-                      <p class="markettrend__moneybig">$150.500</p>
-                      <span class="markettrend__moneypercen"> 20.8% </span>
-                    </div>
-                  </div>
-
-                  <div
-                    class="markettrend__item keen-slider__slide"
-                    id="#markettrendslide-3"
-                    style="
-                      min-width: 278.667px;
-                      max-width: 278.667px;
-                      transform: translate3d(100px, 0px, 0px);
-                    "
-                  >
-                    <div class="markettrend__header">
-                      <div class="markettrend__icon">
-                        <img src="/asset/page/iconnot.png" alt="icon" />
-                      </div>
-                      <div class="markettrend__detail">
-                        <span class="markettrend__detail-title">NOT</span>
-                        <span class="markettrend__detail-name">NOTCOIN</span>
-                      </div>
-                      <div class="markettrend__indicator">
-                        <i class="fa-solid fa-arrow-trend-down"></i>
-                      </div>
-                    </div>
-                    <div class="markettrend__money">
-                      <p class="markettrend__moneybig">$20.500</p>
-                      <span class="markettrend__moneypercen"> 20.8% </span>
-                    </div>
-                  </div>
-
-                  <div
-                    class="markettrend__item keen-slider__slide"
-                    id="#markettrendslide-4"
-                    style="
-                      min-width: 278.667px;
-                      max-width: 278.667px;
-                      transform: translate3d(-1164.67px, 0px, 0px);
-                    "
-                  >
-                    <div class="markettrend__header">
-                      <div class="markettrend__icon">
-                        <img src="/asset/page/icondogs.png" alt="icon" />
-                      </div>
-                      <div class="markettrend__detail">
-                        <span class="markettrend__detail-title">DOGS</span>
-                        <span class="markettrend__detail-name">DOGSCOIN</span>
-                      </div>
-                      <div class="markettrend__indicator">
-                        <i class="fa-solid fa-arrow-trend-up"></i>
-                      </div>
-                    </div>
-                    <div class="markettrend__money">
-                      <p class="markettrend__moneybig">$450.500</p>
-                      <span class="markettrend__moneypercen"> 20.8% </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+          <!-- Alton WEB3 -->
+          <div class="flex flex-col lg:relative lg:h-[320px] overflow-hidden rounded-card-md bg-brand-card-dark border border-brand-border fade-up">
+            <!-- Mobile title (hidden on desktop) -->
+            <h3 class="shrink-0 px-4 pt-4 pb-2 sm:px-6 sm:pt-6 sm:pb-2 md:px-8 md:pt-8 font-orbitron font-black text-xl leading-[1.2] text-white lg:hidden">Alton WEB3</h3>
+            <!-- Image — in flow on mobile, absolute on desktop (must overflow) -->
+            <div class="relative flex items-center justify-center min-h-[200px] w-full py-2 sm:min-h-[200px] sm:py-2 overflow-hidden pointer-events-none lg:absolute lg:left-[162px] lg:top-[-1px] lg:w-[504px] lg:h-[378px] lg:min-h-0 lg:p-0 lg:block">
+              <img src="/asset/new/iphone-web3.png" alt="Alton WEB3" class="w-full  max-h-[min(240px,52vw)] sm:max-h-[min(240px,45vw)] h-auto object-contain animate-float lg:w-full lg:h-full lg:max-h-none lg:max-w-[400px]" />
             </div>
-          </div>
-          <div class="row justify-content-center text-center mt-5 mb-5">
-            <div class="col-lg-7">
-              <div class="titlehead">
-                <img
-                  src="/asset/page/Oval2.svg"
-                  alt="img"
-                  class="bigovalleft"
-                />
-                <p
-                  class="titlehead__title titlemini aos-init"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  WHO WE ARE, DAWG
-                </p>
-                <h3
-                  class="titlehead__content aos-init"
-                  data-aos="fade"
-                  data-aos-delay="500"
-                >
-                  The Alton Trade Vision
-                </h3>
-                <p
-                  class="pt-3 detail aos-init"
-                  data-aos="fade"
-                  data-aos-delay="800"
-                >
-                  At Alton Trade, we’re all about transforming the way you trade
-                  crypto. Built on the TON Blockchain and fully integrated with
-                  Telegram, our platform is designed for seamless and secure
-                  trading. We’re passionate about innovation and committed to
-                  making decentralized finance accessible to everyone. Discover
-                  our journey and join the movement!
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="row mt-4 pt-4">
-            <div class="col-lg-5 order-1 order-lg-0">
-              <div class="accordion">
-                <div
-                  class="tab open aos-init"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  <div class="tab__heading">
-                    <i class="fa-solid fa-check"></i>
-                    <i class="fa-solid fa-angle-down"></i>
-                    <i class="fa-solid fa-angle-up up"></i>
-                    <h2>Seamless Trading Experience</h2>
-                  </div>
-                  <div class="tab__content" style="height: auto">
-                    <p>
-                      Alton Trade offers a seamless trading experience directly
-                      within Telegram. Enjoy effortless integration with the TON
-                      Blockchain and trade cryptocurrencies with unmatched
-                      convenience and efficiency.
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class="tab aos-init"
-                  data-aos="fade-up"
-                  data-aos-delay="300"
-                >
-                  <div class="tab__heading">
-                    <i class="fa-solid fa-check"></i>
-                    <i class="fa-solid fa-angle-down"></i>
-                    <i class="fa-solid fa-angle-up up"></i>
-                    <h2>Enhanced Security</h2>
-                  </div>
-                  <div class="tab__content">
-                    <p>
-                      Your trades are protected by top-notch security measures.
-                      Alton Trade leverages the robust security features of the
-                      TON Blockchain, ensuring your assets are safe and secure
-                      at all times.
-                    </p>
-                  </div>
-                </div>
-
-                <div
-                  class="tab aos-init"
-                  data-aos="fade-up"
-                  data-aos-delay="500"
-                >
-                  <div class="tab__heading">
-                    <i class="fa-solid fa-check"></i>
-                    <i class="fa-solid fa-angle-down"></i>
-                    <i class="fa-solid fa-angle-up up"></i>
-                    <h2>Diverse Crypto Options</h2>
-                  </div>
-                  <div class="tab__content">
-                    <p>
-                      Explore a wide range of cryptocurrencies on Alton Trade.
-                      Our platform supports various digital assets, allowing you
-                      to diversify your portfolio and maximize trading
-                      opportunities.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col-lg-7 align-items-center justify-content-left d-flex mt-5 mb-5 mb-lg-0 mt-lg-0 order-0 order-lg-1"
-            >
-              <div
-                class="imgabout aos-init"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <img src="/asset/page/f1.svg" alt="Alton Trade Platform" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- <img
-          src="/asset/page/notcoin.png"
-          alt="coin"
-          class="rellax leftcoin"
-          data-rellax-speed="5"
-          style="transform: translate3d(0px, 0px, 0px)"
-        />
-        <img
-          src="/asset/page/Monero-1.png"
-          alt="coin"
-          class="rellax rightcoin"
-          data-rellax-speed="2"
-          style="transform: translate3d(0px, 0px, 0px)"
-        /> -->
-      </section>
-
-      <section id="servicesection" class="sectionblock">
-        <div class="container">
-          <div class="row justify-content-center text-center mt-5 mb-5">
-            <div class="col-lg-7">
-              <div class="titlehead">
-                <img
-                  src="/asset/page/Oval2.svg"
-                  alt="img"
-                  class="bigovalright"
-                />
-                <p
-                  class="titlehead__title titlemini aos-init"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  ROADMAP
-                </p>
-                <h3
-                  class="titlehead__content aos-init"
-                  data-aos="fade "
-                  data-aos-delay="500 "
-                >
-                  Our Journey with Alton Trade
-                </h3>
-                <p
-                  class="pt-3 detail aos-init"
-                  data-aos="fade "
-                  data-aos-delay="800 "
-                >
-                  Discover the key milestones and exciting developments in the
-                  evolution of Alton Trade. Here’s how we’re paving the way for
-                  the future of decentralized trading.
-                </p>
-              </div>
-            </div>
-          </div>
-          <div
-            class="row mt-4 aos-init"
-            data-aos="fade-up"
-            data-aos-delay="600"
-          >
-            <div class="col-md-6 col-lg-4 mt-4 text-center text-sm-start">
-              <div class="itemservice">
-                <i class="fa-solid fa-rocket"></i>
-                <p class="itemservice__title">1. Launch of Alton Trader</p>
-                <p class="itemservice__deskrip">
-                  Kickoff our journey with the launch of Alton Trader, a
-                  Telegram web app designed to mine our first native DEX token
-                  on the TON blockchain. Get ready to dive into the future of
-                  decentralized trading right from your chat!
-                </p>
-                <!-- <a href="#" class="btn btnlinktransaparant mt-3">
-                  Learn More <i class="fa-solid fa-arrow-right-long"></i>
-                </a> -->
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 mt-4 text-center text-sm-start">
-              <div class="itemservice">
-                <i class="fa-solid fa-school"></i>
-                <p class="itemservice__title">2. Introducing Alton Academy</p>
-                <p class="itemservice__deskrip">
-                  Empower yourself with knowledge as we integrate Alton Academy
-                  into Alton Trader. This feature will guide users through the
-                  world of cryptocurrencies and Web 3.0, offering valuable
-                  insights and educational resources.
-                </p>
-                <!-- <a href="#" class="btn btnlinktransaparant mt-3">
-                  Learn More <i class="fa-solid fa-arrow-right-long"></i>
-                </a> -->
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 mt-4 text-center text-sm-start">
-              <div class="itemservice">
-                <i class="fa-solid fa-copyright"></i>
-                <p class="itemservice__title">3. Brand Tokens Unveiled</p>
-                <p class="itemservice__deskrip">
-                  Experience the future of branding with our Brand Tokens
-                  feature. Release the Alton Trade exchange and create your own
-                  brand token through our web app, paving the way for innovative
-                  brand-building in the crypto space.
-                </p>
-                <!-- <a href="#" class="btn btnlinktransaparant mt-3">
-                  Learn More <i class="fa-solid fa-arrow-right-long"></i>
-                </a> -->
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 mt-4 text-center text-sm-start">
-              <div class="itemservice">
-                <i class="fa-solid fa-arrow-right-arrow-left"></i>
-                <p class="itemservice__title">4. In-Game Exchange Feature</p>
-                <p class="itemservice__deskrip">
-                  Level up your trading with our new in-game exchange
-                  functionality. This addition will enhance internal game trades
-                  and significantly impact token drops, adding a dynamic element
-                  to your trading experience.
-                </p>
-                <!-- <a href="#" class="btn btnlinktransaparant mt-3">
-                  Learn More <i class="fa-solid fa-arrow-right-long"></i>
-                </a> -->
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 mt-4 text-center text-sm-start">
-              <div class="itemservice">
-                <i class="fa-solid fa-droplet"></i>
-                <p class="itemservice__title">5. TGE & Listing</p>
-                <p class="itemservice__deskrip">
-                  Witness the debut of our native token with its generation and
-                  listing. Enjoy the new functionality, including discount of
-                  trading fees paid with our token and other exciting features,
-                  marking a milestone in our platform’s evolution.
-                </p>
-                <!-- <a href="#" class="btn btnlinktransaparant mt-3">
-                  Learn More <i class="fa-solid fa-arrow-right-long"></i>
-                </a> -->
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-4 mt-4 text-center text-sm-start">
-              <div class="itemservice">
-                <i class="fa-solid fa-newspaper"></i>
-                <p class="itemservice__title">6. New Features</p>
-                <p class="itemservice__deskrip">
-                  We’re not stopping here! Continue to explore our evolving
-                  platform with new enhancements. The second phase of Alton
-                  Trader will include additional token drops and further
-                  improvements to our exchange experience.
-                </p>
-                <!-- <a href="#" class="btn btnlinktransaparant mt-3">
-                  Learn More <i class="fa-solid fa-arrow-right-long"></i>
-                </a> -->
-              </div>
-            </div>
-          </div>
-          <div class="row mt-5 gap-blck">
-            <div class="col-lg-6">
-              <div class="wrapgeap text-center text-sm-start">
-                <p class="wrapgeap__title">
-                  Dive Into the World of TON Blockchain
-                </p>
-                <p class="wrapgeap__desc">
-                  Discover how Alton Trade is making waves on the TON
-                  blockchain! Join a thriving ecosystem where millions are
-                  trading and innovating. Here’s a snapshot of the vibrant world
-                  you’re about to join:
-                </p>
-              </div>
-            </div>
-            <div class="col-lg-6 text-center text-sm-end mt-5">
-              <a href="https://www.tonstat.com/" target="_blank" rel="nofollow" class="btn btnlinkdark"> Learn more </a>
-            </div>
-          </div>
-          <div class="row mt-5 mb-5 pt-4">
-            <div
-              class="col-lg-6 align-items-center justify-content-left d-flex mt-5 mb-5 mb-lg-0 mt-lg-0"
-            >
-              <div
-                class="imgabout aos-init"
-                data-aos="fade-up"
-                data-aos-delay="300"
-              >
-                <img src="/asset/page/f2.svg" alt="poto" />
-              </div>
-            </div>
-            <div class="col-lg-6">
-              <div class="row">
-                <div class="col-lg-6 counterwrap__outwrap mb-4">
-                  <div class="counterwrap__inner">
-                    <i class="fa-solid fa-users"></i>
-                    <div class="counterwrap__innercontent">
-                      <p class="counterwrap__counternum">
-                        <span class="icon-ton">+</span>
-                        <span class="counterwrap__counter" data-speed="2000"
-                          >950</span
-                        ><span class="icon">M</span>
-                      </p>
-                      <p class="counterwrap__numtitle">Telegram Users</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 counterwrap__outwrap mb-4">
-                  <div class="counterwrap__inner">
-                    <i class="fa-solid fa-wallet"></i>
-                    <div class="counterwrap__innercontent">
-                      <p class="counterwrap__counternum">
-                        <span class="icon-ton">+</span>
-                        <span class="counterwrap__counter" data-speed="2000 "
-                          >55</span
-                        ><span class="icon">M</span>
-                      </p>
-                      <p class="counterwrap__numtitle">Wallets Created</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 counterwrap__outwrap mb-4">
-                  <div class="counterwrap__inner">
-                    <i class="fa-solid fa-user-check"></i>
-                    <div class="counterwrap__innercontent">
-                      <p class="counterwrap__counternum">
-                        <span class="icon-ton">+</span>
-                        <span class="counterwrap__counter" data-speed="2000 "
-                          >14</span
-                        ><span class="icon">M</span>
-                      </p>
-                      <p class="counterwrap__numtitle">Active Participants</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-lg-6 counterwrap__outwrap mb-4">
-                  <div class="counterwrap__inner">
-                    <i class="fa-solid fa-coins"></i>
-                    <div class="counterwrap__innercontent">
-                      <p class="counterwrap__counternum">
-                        <span class="icon-ton">+</span>
-                        <span class="counterwrap__counter" data-speed="2000 "
-                          >500</span
-                        ><span class="icon"></span>
-                      </p>
-                      <p class="counterwrap__numtitle">Tokens on TON</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- <img
-          src="/asset/page/Bitcoin-1.png"
-          alt="coin"
-          class="rellax leftcoin"
-          data-rellax-speed="3.3"
-          style="transform: translate3d(0px, 0px, 0px)"
-        />
-        <img
-          src="/asset/page/Etherium-2.png"
-          alt="coin"
-          class="rellax rightcoin"
-          data-rellax-speed="2.5"
-          style="transform: translate3d(0px, 0px, 0px)"
-        /> -->
-      </section>
-
-      <!-- <section id="teamsection" class="sectionblock">
-        <div class="container">
-          <div class="row justify-content-center text-center mt-5 mb-5">
-            <div class="col-lg-7">
-              <div class="titlehead">
-                <img
-                  src="/asset/page/Oval.svg"
-                  alt="img"
-                  class="bigovalleft"
-                />
-                <p
-                  class="titlehead__title titlemini aos-init"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  BEHIND THE SCENES
-                </p>
-                <h3
-                  class="titlehead__content aos-init"
-                  data-aos="fade "
-                  data-aos-delay="500 "
-                >
-                  Introduce Nerx Team
-                </h3>
-                <p
-                  class="pt-3 detail aos-init"
-                  data-aos="fade "
-                  data-aos-delay="800 "
-                >
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Quasi labore dolor qui id, voluptatem, minima esse quisquam
-                  provident, quae quia sit rerum incidunt. Nam architecto quasi
-                  praesentium optio animi quam!
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="row pt-5 pb-5">
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <div class="wrapteam">
-                <div class="wrapteam__inner">
-                  <img src="/asset/team/p1.png" alt="team" class="img-fluid" />
-                  <p class="pt-2">Miss Milkita</p>
-                  <span> Manager </span>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <div class="wrapteam">
-                <div class="wrapteam__inner">
-                  <img src="/asset/team/p2.png" alt="team" class="img-fluid" />
-                  <p class="pt-2">Miss Milkita</p>
-                  <span> Marketer </span>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-4 mb-5 mb-lg-0">
-              <div class="wrapteam">
-                <div class="wrapteam__inner">
-                  <img src="/asset/team/1.jpg" alt="team" class="img-fluid" />
-                  <p class="pt-2">Abang Milkita</p>
-                  <span> UI/UX Designer </span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <img
-          src="/asset/page/Monero-1.png"
-          alt="coin"
-          class="rellax rightcoin"
-          data-rellax-speed="0.8"
-          style="transform: translate3d(0px, 0px, 0px)"
-        />
-        <img
-          src="/asset/page/Bitcoin-1.png"
-          alt="coin"
-          class="rellax leftcoin"
-          data-rellax-speed="1.5"
-          style="transform: translate3d(0px, 0px, 0px)"
-        />
-      </section> -->
-
-      <!-- <section id="testimonialsection" class="sectionblock">
-        <div class="container">
-          <div class="row justify-content-center text-center mt-5 mb-5">
-            <div class="col-lg-7">
-              <div class="titlehead">
-                <img
-                  src="/asset/page/Oval2.svg"
-                  alt="img"
-                  class="bigovalright"
-                />
-                <p
-                  class="titlehead__title titlemini aos-init"
-                  data-aos="fade-up"
-                  data-aos-delay="100"
-                >
-                  OUR AWESOME PARTNERS
-                </p>
-                <h3
-                  class="titlehead__content aos-init"
-                  data-aos="fade "
-                  data-aos-delay="500 "
-                >
-                  Check Out Our Collabs
-                </h3>
-                <p
-                  class="pt-3 detail aos-init"
-                  data-aos="fade "
-                  data-aos-delay="800 "
-                >
-                  We’re teaming up with some incredible folks out there! Our
-                  integrations and partners are the secret sauce that makes
-                  Alton Trade rock. Check out the amazing brands and projects
-                  we’re rolling with:
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="row justify-content-left align-items-left pt-5 pb-5">
-            <div class="col-lg-12">
-              <div
-                class="wrapbrand d-flex justify-content-center justify-content-lg-between align-items-center flex-wrap"
-              >
-                <div
-                  class="wrapbrand__img aos-init"
-                  data-aos="fade-in"
-                  data-aos-delay="100"
-                >
-                  <img src="asset/client/certik.svg" alt="Certik" />
-                </div>
-                <div
-                class="wrapbrand__img aos-init"
-                data-aos="fade-in"
-                data-aos-delay="100"
-              >
-                <img src="asset/client/getgems.svg" alt="Getgems" />
-              </div>
-
-                <div
-                  class="wrapbrand__img aos-init"
-                  data-aos="fade-in"
-                  data-aos-delay="200"
-                >
-                  <img src="asset/client/tonwallet.svg" alt="TonWallet" />
-                </div>
-
-                <div
-                  class="wrapbrand__img aos-init"
-                  data-aos="fade-in"
-                  data-aos-delay="300"
-                >
-                  <img src="asset/client/adsgram.svg" alt="AdsGram" />
-                </div>
-
-                <div
-                  class="wrapbrand__img aos-init"
-                  data-aos="fade-in"
-                  data-aos-delay="400"
-                >
-                  <img src="asset/client/tonkeeper.svg" alt="Tonkeeper" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-    </main>
-
-    <footer id="footersection" class="mt-5 pt-5 pb-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-5">
-            <div class="footerwrap">
-              <img
-                src="/asset/page/alton-logo-site.svg"
-                alt="logofooter"
-                class="img-fluid pb-4"
-              />
-              <p class="footerwrap__info pl-3">
-                Alton Trade is your go-to platform for next-gen crypto trading
-                on the TON network. We're all about making trading seamless and
-                fun, with the power of Telegram and cutting-edge technology.
-                Join us on this exciting journey and be part of the future of
-                decentralized finance!
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-7 mt-4 mt-lg-0 text-left text-sm-end">
-            <div class="footerwrap">
-              <p class="footerwrap__title text-left text-lg-right pl-3">
-                Stay Tune With Us
-              </p>
-              <ul class="footerwrap__social text-left text-lg-right">
-                <!-- <li>
-                  <a href="#" rel="nofollow">
-                    <i class="fa-brands fa-github"></i>
-                  </a>
-                </li> -->
-                <li>
-                  <a href="https://t.me/alton_trade" target="_blank" rel="nofollow">
-                    <i class="fa-brands fa-telegram"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://youtube.com/@THEALTONOFFICIAL"  target="_blank" rel="nofollow">
-                    <i class="fa-brands fa-youtube"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://x.com/TradeAlton" target="_blank" rel="nofollow">
-                    <i class="fa-brands fa-x-twitter"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://instagram.com/alton.trade/" target="_blank" rel="nofollow">
-                    <i class="fa-brands fa-instagram"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="https://linkedin.com/company/alton-trade" target="_blank" rel="nofollow">
-                    <i class="fa-brands fa-linkedin"></i>
-                  </a>
-                </li>
+            <!-- Text block — in flow, mt-auto pushes to bottom on desktop -->
+            <div class="relative z-20 px-4 pb-4 sm:px-6 sm:pb-6 md:px-8 md:pb-8 lg:mt-auto lg:px-8 lg:pb-8 lg:pt-0 lg:max-w-[416px]">
+              <h3 class="hidden lg:block font-orbitron font-black text-xl leading-[1.2] text-white lg:mb-2">Alton WEB3</h3>
+              <p class="text-brand-muted text-[11px] sm:text-xs md:text-sm lg:text-sm leading-relaxed max-w-[238px] mb-2 sm:mb-3 lg:mb-4">DeFi layer for trading ecosystem and creator token economies.</p>
+              <ul class="text-brand-muted text-[11px] sm:text-xs md:text-sm lg:text-sm leading-relaxed list-disc pl-3 sm:pl-5 lg:pl-[21px] space-y-0.5">
+                <li>Token trading</li>
+                <li>Liquidity &amp; farming</li>
+                <li>Brand token infrastructure</li>
               </ul>
             </div>
           </div>
-          <div class="col-lg-12 pt-4">
-            <div class="footerwrap__infobottom">
-              <p class="pt-3">
-                Alton Trade @<span class="years">2024</span>
-              </p>
+
+          <!-- Alton Trader -->
+          <div class="flex flex-col lg:relative lg:h-[320px] overflow-hidden rounded-card-md bg-brand-card-dark border border-brand-border fade-up">
+            <!-- Mobile title (hidden on desktop) -->
+            <h3 class="shrink-0 px-4 pt-4 pb-2 sm:px-6 sm:pt-6 sm:pb-2 md:px-8 md:pt-8 font-orbitron font-black text-xl leading-[1.2] text-white lg:hidden">Alton Trader</h3>
+            <!-- Image — in flow on mobile, absolute on desktop -->
+            <div class="relative flex items-center justify-center min-h-[200px] w-full py-2 sm:min-h-[200px] sm:py-2 overflow-hidden pointer-events-none lg:absolute lg:inset-0 lg:min-h-0 lg:p-0 lg:block">
+              <div class="max-sm:w-full max-sm:mx-auto sm:max-[1199px]:w-full sm:max-[1199px]:mx-auto flex justify-center items-center lg:absolute lg:left-[min(119px,18%)] lg:top-[-106px] lg:h-[min(577px,160%)] lg:w-[min(679px,130%)] lg:max-w-none lg:rotate-[-15deg] lg:origin-center">
+                <img src="/asset/new/iphone-trader.png" alt="Alton Trader" class="w-full max-h-[min(240px,52vw)] sm:max-h-[min(240px,45vw)] h-auto object-contain animate-float-slow lg:w-[585px] lg:max-h-[441px] lg:max-w-none lg:mb-0" />
+              </div>
+            </div>
+            <!-- Text block — in flow, mt-auto pushes to bottom on desktop -->
+            <div class="relative z-20 px-4 pb-4 sm:px-6 sm:pb-6 md:px-8 md:pb-8 lg:mt-auto lg:px-8 lg:pb-8 lg:pt-0">
+              <h3 class="hidden lg:block font-orbitron font-black text-xl leading-[1.2] text-white lg:mb-2">Alton Trader</h3>
+              <p class="text-brand-muted text-[11px] sm:text-xs md:text-sm lg:text-sm leading-relaxed max-w-[188px] mb-2 sm:mb-3 lg:mb-4">Learn Web3, earn tokens and join brand communities</p>
+              <ul class="text-brand-muted text-[11px] sm:text-xs md:text-sm lg:text-sm leading-relaxed list-disc pl-3 sm:pl-5 lg:pl-[21px] space-y-0.5">
+                <li>Mining Alton token by completing tasks</li>
+                <li>Learn WEB3 through Alton Academy</li>
+                <li>Join brand clans and get rewards</li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== HOW IT WORKS ====== -->
+    <section id="how-it-works" class="py-16 md:py-24 px-4 md:px-8">
+      <div class="max-w-[1440px] mx-auto px-2 lg:px-[144px]">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8 mb-8 md:mb-10 lg:items-center">
+          <h2 class="font-orbitron font-black text-[32px] md:text-[48px] leading-[1.2] text-white fade-up lg:col-span-1">How it works</h2>
+          <div class="lg:col-span-2 flex flex-wrap items-center gap-4">
+            <div class="bg-brand-card rounded-xl p-0.5 flex shrink-0 fade-up">
+              <button class="tab-btn tab-active px-6 py-2 rounded-lg text-base font-semibold transition-all duration-300" data-tab="users">For Users</button>
+              <button class="tab-btn bg-brand-card text-white px-6 py-2 rounded-lg text-base font-normal transition-all duration-300" data-tab="creators">For Creators</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOR USERS steps -->
+        <div class="tab-panel active" id="panel-users">
+          <div class="relative">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-2 items-start">
+              <div class="bg-brand-card border border-brand-border rounded-card-sm px-[15px] pt-[23px] pb-[15px] h-[280px] md:h-[320px] overflow-hidden relative flex flex-col fade-up">
+                <p class="text-brand-muted text-sm mb-1">STEP ONE</p>
+                <h3 class="font-orbitron font-black text-lg leading-[1.2] text-white">Join Alton Academy</h3>
+                <div class="flex-1 relative my-3">
+                  <div class="absolute inset-0 flex items-center justify-center"><div class="w-[136px] h-[136px] rounded-full bg-brand-glow/40 blur-[20px]"></div></div>
+                  <img src="asset/new/hiw-users-1.svg" alt="" class="absolute inset-0 w-full h-full object-contain pointer-events-none" />
+                </div>
+                <p class="text-brand-muted text-sm leading-relaxed max-w-[242px]">Complete tasks and earn rewards while learning Web3.</p>
+              </div>
+              <div class="bg-brand-card border border-brand-border rounded-card-sm px-[15px] pt-[23px] pb-[15px] h-[280px] md:h-[320px] overflow-hidden relative flex flex-col fade-up">
+                <p class="text-brand-muted text-sm mb-1">STEP TWO</p>
+                <h3 class="font-orbitron font-black text-lg leading-[1.2] text-white">Knowledge in practice</h3>
+                <div class="flex-1 relative my-3">
+                  <div class="absolute inset-0 flex items-center justify-center"><div class="w-[136px] h-[136px] rounded-full bg-brand-glow/40 blur-[20px]"></div></div>
+                  <img src="asset/new/hiw-users-2.svg" alt="" class="absolute inset-0 w-full h-full object-contain pointer-events-none" />
+                </div>
+                <p class="text-brand-muted text-sm leading-relaxed max-w-[242px]">Earn points for future drops and access the MVP social platform.</p>
+              </div>
+              <div class="bg-brand-card border border-brand-border rounded-card-sm px-[15px] pt-[23px] pb-[15px] h-[280px] md:h-[320px] overflow-hidden relative flex flex-col fade-up">
+                <p class="text-brand-muted text-sm mb-1">STEP THREE</p>
+                <h3 class="font-orbitron font-black text-lg leading-[1.2] text-white">Explore token trading</h3>
+                <div class="flex-1 relative my-3">
+                  <div class="absolute inset-0 flex items-center justify-center"><div class="w-[136px] h-[136px] rounded-full bg-brand-glow/40 blur-[20px]"></div></div>
+                  <img src="asset/new/hiw-users-3.svg" alt="" class="absolute inset-0 w-full h-full object-contain pointer-events-none" />
+                </div>
+                <p class="text-brand-muted text-sm leading-relaxed max-w-[242px]">Join brand clans and complete brand tasks to earn rewards</p>
+              </div>
+              <div class="bg-brand-card border border-brand-border rounded-card-sm px-[15px] pt-[23px] pb-[15px] h-[280px] md:h-[320px] overflow-hidden relative flex flex-col fade-up">
+                <p class="text-brand-muted text-sm mb-1">STEP FOUR</p>
+                <h3 class="font-orbitron font-black text-lg leading-[1.2] text-white">Support creators</h3>
+                <div class="flex-1 relative my-3">
+                  <div class="absolute inset-0 flex items-center justify-center"><div class="w-[136px] h-[136px] rounded-full bg-brand-glow/40 blur-[20px]"></div></div>
+                  <img src="asset/new/hiw-users-4.svg" alt="" class="absolute inset-0 w-full h-full object-contain pointer-events-none" />
+                </div>
+                <p class="text-brand-muted text-sm leading-relaxed max-w-[250px]">Earn from participation. Actively engage inside tokenized communities</p>
+              </div>
+            </div>
+            <div class="hidden lg:flex absolute inset-0 z-10 pointer-events-none items-center justify-between px-[calc(25%-22px)]">
+              <div class="bg-brand-glow rounded-full w-10 h-10 flex items-center justify-center shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m0 0l-6-6m6 6l-6 6"/></svg></div>
+              <div class="bg-brand-glow rounded-full w-10 h-10 flex items-center justify-center shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m0 0l-6-6m6 6l-6 6"/></svg></div>
+              <div class="bg-brand-glow rounded-full w-10 h-10 flex items-center justify-center shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m0 0l-6-6m6 6l-6 6"/></svg></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FOR CREATORS steps -->
+        <div class="tab-panel hidden" id="panel-creators">
+          <div class="relative">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-2 items-start">
+              <div class="bg-brand-card border border-brand-border rounded-card-sm px-[15px] pt-[23px] pb-[15px] h-[280px] md:h-[320px] overflow-hidden relative flex flex-col fade-up">
+                <p class="text-brand-muted text-sm mb-1">STEP ONE</p>
+                <h3 class="font-orbitron font-black text-lg leading-[1.2] text-white">Get waitlist access to the MVP</h3>
+                <div class="flex-1 relative my-3">
+                  <div class="absolute inset-0 flex items-center justify-center"><div class="w-[136px] h-[136px] rounded-full bg-brand-glow/40 blur-[20px]"></div></div>
+                  <img src="asset/new/hiw-creators-1.svg" alt="" class="absolute inset-0 w-full h-full object-contain pointer-events-none" />
+                </div>
+                <p class="text-brand-muted text-sm leading-relaxed max-w-[250px]">Prepare for monetization before mainnet launch</p>
+              </div>
+              <div class="bg-brand-card border border-brand-border rounded-card-sm px-[15px] pt-[23px] pb-[15px] h-[280px] md:h-[320px] overflow-hidden relative flex flex-col fade-up">
+                <p class="text-brand-muted text-sm mb-1">STEP TWO</p>
+                <h3 class="font-orbitron font-black text-lg leading-[1.2] text-white">Create content</h3>
+                <div class="flex-1 relative my-3">
+                  <div class="absolute inset-0 flex items-center justify-center"><div class="w-[136px] h-[136px] rounded-full bg-brand-glow/40 blur-[20px]"></div></div>
+                  <img src="asset/new/hiw-creators-2.svg" alt="" class="absolute inset-0 w-full h-full object-contain pointer-events-none" />
+                </div>
+                <p class="text-brand-muted text-sm leading-relaxed max-w-[250px]">Offer premium posts and subscriptions. Earn from views and community support</p>
+              </div>
+              <div class="bg-brand-card border border-brand-border rounded-card-sm px-[15px] pt-[23px] pb-[15px] h-[280px] md:h-[320px] overflow-hidden relative flex flex-col fade-up">
+                <p class="text-brand-muted text-sm mb-1">STEP THREE</p>
+                <h3 class="font-orbitron font-black text-lg leading-[1.2] text-white">Create your brand token</h3>
+                <div class="flex-1 relative my-3">
+                  <div class="absolute inset-0 flex items-center justify-center"><div class="w-[136px] h-[136px] rounded-full bg-brand-glow/40 blur-[20px]"></div></div>
+                  <img src="asset/new/hiw-creators-3.svg" alt="" class="absolute inset-0 w-full h-full object-contain pointer-events-none" />
+                </div>
+                <p class="text-brand-muted text-sm leading-relaxed max-w-[250px]">Launch BrandPad with your community. Build your brand clan and create tasks for followers.</p>
+              </div>
+              <div class="bg-brand-card border border-brand-border rounded-card-sm px-[15px] pt-[23px] pb-[15px] h-[280px] md:h-[320px] overflow-hidden relative flex flex-col fade-up">
+                <p class="text-brand-muted text-sm mb-1">STEP FOUR</p>
+                <h3 class="font-orbitron font-black text-lg leading-[1.2] text-white">Compete with other brand clans</h3>
+                <div class="flex-1 relative my-3">
+                  <div class="absolute inset-0 flex items-center justify-center"><div class="w-[136px] h-[136px] rounded-full bg-brand-glow/40 blur-[20px]"></div></div>
+                  <img src="asset/new/hiw-creators-4.svg" alt="" class="absolute inset-0 w-full h-full object-contain pointer-events-none" />
+                </div>
+                <p class="text-brand-muted text-sm leading-relaxed max-w-[250px]">Increase token demand. Scale your community and revenue</p>
+              </div>
+            </div>
+            <div class="hidden lg:flex absolute inset-0 z-10 pointer-events-none items-center justify-between px-[calc(25%-22px)]">
+              <div class="bg-brand-glow rounded-full w-10 h-10 flex items-center justify-center shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m0 0l-6-6m6 6l-6 6"/></svg></div>
+              <div class="bg-brand-glow rounded-full w-10 h-10 flex items-center justify-center shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m0 0l-6-6m6 6l-6 6"/></svg></div>
+              <div class="bg-brand-glow rounded-full w-10 h-10 flex items-center justify-center shrink-0"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m0 0l-6-6m6 6l-6 6"/></svg></div>
             </div>
           </div>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <a href="#" class="scroll-top">
-      <i class="fa-solid fa-arrow-up"></i>
-    </a>
+    <!-- ====== WHY ALTON ====== -->
+    <section id="why-alton" class="bg-brand-card py-16 md:py-24 px-4 md:px-8 overflow-hidden">
+      <div class="max-w-[1440px] mx-auto px-2 lg:px-[144px]">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8 mb-12 md:mb-16 lg:items-start">
+          <h2 class="font-orbitron font-black text-[32px] md:text-[48px] leading-[1.2] text-white fade-up lg:col-span-1">Why Alton</h2>
+          <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4 lg:col-span-2">
+            <p class="text-brand-muted text-base leading-relaxed max-w-[312px] lg:max-w-none fade-up">
+              A simple and powerful Ecosystem for creators and communities.
+            </p>
+            <a href="http://waitlist.altons.trade/" class="inline-flex items-center justify-center gap-2.5 bg-brand-accent text-white text-base md:text-lg font-medium capitalize px-6 py-3 rounded-lg hover:bg-brand-accent-hover active:bg-brand-accent-active transition-colors duration-200 shrink-0 w-full sm:w-[270px] fade-up">
+              Join waitlist
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m0 0l-6-6m6 6l-6 6"/></svg>
+            </a>
+          </div>
+        </div>
 
-    <script src="javascript/vendor/bootstrap.js"></script>
+        <!-- 3 Feature cards — fan layout -->
+        <div class="flex flex-col lg:flex-row items-center justify-center">
+          <!-- Card 1 — rotated left -->
+          <div class="w-full max-w-[368px] lg:-rotate-6 z-10 mb-6 lg:mb-0 fade-up">
+            <div class="bg-brand-bg border border-brand-border rounded-card-lg shadow-[0px_4px_16px_0px_rgba(0,0,0,0.24)] overflow-hidden h-[400px] md:h-[444px] relative">
+              <h3 class="font-orbitron font-black text-xl md:text-2xl leading-[1.2] text-white text-center mt-10 w-[320px] mx-auto">Smart Recommendations</h3>
+              <p class="text-brand-muted text-sm leading-relaxed text-center mt-3 max-w-[320px] mx-auto">
+                AI-powered system that shows users the most relevant content and connects them with the right communities.
+              </p>
+              <div class="absolute bottom-[15px] left-[15px] w-[calc(100%-30px)] h-[136px] bg-[#1c2537] rounded-card-md z-0"></div>
+              <div class="absolute left-1/2 -translate-x-1/2 top-[219px] w-[144px] h-[144px] rounded-full bg-[#1c2537] blur-[40px] z-[1]"></div>
+              <img src="asset/new/star-filled.svg" alt="" class="absolute left-1/2 -translate-x-1/2 top-[calc(50%+0px)] w-[25px] h-[24px] z-[2]" />
+              <div class="absolute left-[57px] top-[260px] w-[252px] h-[91px] z-[2]">
+                <img src="asset/new/star-outline.svg" alt="" class="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 top-[calc(50%-29px)] w-[25px] h-[24px]" />
+                <img src="asset/new/star-outline.svg" alt="" class="absolute left-[calc(50%-38px)] top-[calc(50%-22px)] -translate-x-1/2 -translate-y-1/2 w-[25px] h-[24px] -rotate-[15deg]" />
+                <img src="asset/new/star-outline.svg" alt="" class="absolute left-[calc(50%-74px)] top-[calc(50%-3px)] -translate-x-1/2 -translate-y-1/2 w-[27px] h-[26px] -rotate-[30deg]" />
+                <img src="asset/new/star-outline.svg" alt="" class="absolute left-[calc(50%-103px)] top-[calc(50%+23px)] -translate-x-1/2 -translate-y-1/2 w-[28px] h-[27px] -rotate-[45deg]" />
+                <img src="asset/new/star-outline.svg" alt="" class="absolute left-[calc(50%+38px)] top-[calc(50%-22px)] -translate-x-1/2 -translate-y-1/2 w-[25px] h-[24px] rotate-[15deg]" />
+                <img src="asset/new/star-outline.svg" alt="" class="absolute left-[calc(50%+74px)] top-[calc(50%-3px)] -translate-x-1/2 -translate-y-1/2 w-[27px] h-[26px] rotate-[30deg]" />
+                <img src="asset/new/star-outline.svg" alt="" class="absolute left-[calc(50%+103px)] top-[calc(50%+23px)] -translate-x-1/2 -translate-y-1/2 w-[28px] h-[27px] rotate-[45deg]" />
+              </div>
+            </div>
+          </div>
 
-    <script src="javascript/vendor/aos.js "></script>
+          <!-- Card 2 — center, no rotation, on top -->
+          <div class="w-full max-w-[368px] z-20 lg:-translate-y-3 mb-6 lg:mb-0 fade-up">
+            <div class="bg-brand-bg border border-brand-border rounded-card-lg shadow-[0px_4px_16px_0px_rgba(0,0,0,0.24)] overflow-hidden h-[400px] md:h-[444px] relative">
+              <h3 class="font-orbitron font-black text-xl md:text-2xl leading-[1.2] text-white text-center mt-10 w-[320px] mx-auto">Web 2.5<br/>Platform</h3>
+              <p class="text-brand-muted text-sm leading-relaxed text-center mt-3 max-w-[320px] mx-auto">
+                Combines familiar social experience with decentralized data storage and Web3 ownership
+              </p>
+              <div class="absolute bottom-[15px] left-[15px] w-[calc(100%-30px)] h-[136px] bg-[#1c2537] rounded-card-md z-0"></div>
+              <div class="absolute left-1/2 -translate-x-1/2 top-[206px] w-[158px] h-[158px] rounded-full bg-[#1c2537] blur-[40px] -rotate-6 z-[1]"></div>
+              <div class="absolute left-[calc(13.49%)] right-[calc(33.74%)] top-[calc(50%+67px)] -translate-y-1/2 aspect-square z-[2]">
+                <div class="-rotate-[15deg] w-[159px] h-[159px] mx-auto">
+                  <div class="w-full h-full rounded-full border-2 border-white"></div>
+                </div>
+              </div>
+              <div class="absolute left-[calc(33.55%)] right-[calc(13.68%)] top-[calc(50%+93px)] -translate-y-1/2 aspect-square z-[2]">
+                <div class="-rotate-[15deg] w-[159px] h-[159px] mx-auto">
+                  <div class="w-full h-full rounded-full border-2 border-[#a9b1bf]"></div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <script src="javascript/vendor/keen-slider.js "></script>
+          <!-- Card 3 — rotated right -->
+          <div class="w-full max-w-[368px] lg:rotate-6 z-10 fade-up">
+            <div class="bg-brand-bg border border-brand-border rounded-card-lg shadow-[0px_4px_16px_0px_rgba(0,0,0,0.24)] overflow-hidden h-[400px] md:h-[444px] relative">
+              <h3 class="font-orbitron font-black text-xl md:text-2xl leading-[1.2] text-white text-center mt-10 w-[320px] mx-auto">Creator &amp; Community Economy</h3>
+              <p class="text-brand-muted text-sm leading-relaxed text-center mt-3 max-w-[320px] mx-auto">
+                Creators own their audience. Communities earn, participate and grow through tokenized tools.
+              </p>
+              <div class="absolute bottom-[15px] left-[15px] w-[calc(100%-30px)] h-[136px] bg-[#1c2537] rounded-card-md z-0"></div>
+              <div class="absolute left-[91px] top-[206px] w-[170px] h-[170px] -rotate-12 z-[1]">
+                <div class="w-[144px] h-[144px] rounded-full bg-[#1c2537] blur-[40px]"></div>
+              </div>
+              <img src="asset/new/chart-line2.svg" alt="" class="absolute left-[68px] top-[209px] w-[189px] h-[161px] z-[2]" />
+              <img src="asset/new/chart-line1.svg" alt="" class="absolute left-[110px] top-[209px] w-[189px] h-[161px] z-[3]" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script src="javascript/vendor/rellax.js "></script>
+    <!-- ====== ROADMAP ====== -->
+    <section id="roadmap" class="bg-brand-bg py-16 md:py-24 px-4 md:px-8 overflow-hidden">
+      <div class="max-w-[1440px] mx-auto px-2 lg:px-[144px]">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-8 mb-12 md:mb-16 lg:items-start">
+          <h2 class="font-orbitron font-black text-[32px] md:text-[48px] leading-[1.2] text-white fade-up lg:col-span-1">Roadmap</h2>
+        </div>
 
-    <script src="javascript/vendor/glightbox.js "></script>
+        <div class="relative" id="roadmap-timeline">
+          <!-- Timeline track (desktop) -->
+          <div class="hidden lg:block absolute top-0 bottom-0 w-1 left-[calc(240px+32px+38px)] xl:left-[calc(280px+32px+38px)]">
+            <div class="w-full h-full bg-brand-card rounded-full"></div>
+            <div id="seg-green" class="roadmap-seg absolute left-0 w-full rounded-t-full bg-[#08FF7A]" style="top:0;height:0"></div>
+            <div id="seg-yellow" class="roadmap-seg absolute left-0 w-full bg-[linear-gradient(180deg,#08FF7A_0%,#08FF7A_50%,#F3E118_50%,#F3E118_100%)]" style="top:0;height:0"></div>
+            <div id="seg-gray" class="roadmap-seg absolute left-0 w-full rounded-b-full bg-[#334155]" style="top:0;height:0"></div>
+          </div>
 
-    <script src="javascript/vendor/sweetalert.js"></script>
+          <!-- Phase: Completed -->
+          <div class="roadmap-phase relative mb-12 md:mb-16" data-phase="completed">
+            <div class="flex flex-col gap-4 lg:grid lg:grid-cols-[240px_80px_1fr] xl:grid-cols-[280px_80px_1fr] lg:gap-x-8 lg:items-start">
+              <h3 class="font-orbitron font-black text-xl md:text-2xl text-white lg:text-right lg:pt-5 roadmap-label">Completed</h3>
+              <div class="shrink-0 w-[80px] h-[80px] rounded-full bg-brand-green-bg border border-[rgba(8,255,122,0.24)] flex items-center justify-center relative z-10 roadmap-icon mx-auto lg:mx-0">
+                <svg class="w-8 h-8 text-[#08FF7A]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <div class="flex flex-col gap-6 lg:pt-1 roadmap-content">
+                <div>
+                  <h4 class="font-orbitron font-black text-lg text-white mb-2">Alton Trader Beta</h4>
+                  <p class="text-brand-muted text-sm leading-relaxed">Gamified onboarding app with integrated Academy. Live on Telegram</p>
+                </div>
+                <div>
+                  <h4 class="font-orbitron font-black text-lg text-white mb-2">Core Infrastructure</h4>
+                  <p class="text-brand-muted text-sm leading-relaxed">Main smart contracts deployed for testnet. Decentralized storage architecture designed and implemented</p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-    <script src="javascript/main.js "></script>
-  </body>
+          <!-- Phase: Near Term -->
+          <div class="roadmap-phase relative mb-12 md:mb-16" data-phase="near-term">
+            <div class="flex flex-col gap-4 lg:grid lg:grid-cols-[240px_80px_1fr] xl:grid-cols-[280px_80px_1fr] lg:gap-x-8 lg:items-start">
+              <h3 class="font-orbitron font-black text-xl md:text-2xl text-white lg:text-right lg:pt-5 roadmap-label">Near Term</h3>
+              <div class="shrink-0 w-[80px] h-[80px] rounded-full bg-brand-yellow-bg border border-[rgba(243,225,24,0.24)] flex items-center justify-center relative z-10 roadmap-icon mx-auto lg:mx-0">
+                <svg class="w-8 h-8 text-[#F3E118]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 22h14"/><path d="M5 2h14"/><path d="M17 22v-4.172a2 2 0 00-.586-1.414L12 12l-4.414 4.414A2 2 0 007 17.828V22"/><path d="M7 2v4.172a2 2 0 00.586 1.414L12 12l4.414-4.414A2 2 0 0017 6.172V2"/></svg>
+              </div>
+              <div class="flex flex-col gap-6 lg:pt-1 roadmap-content">
+                <div>
+                  <h4 class="font-orbitron font-black text-lg text-white mb-2">Alton Testnet</h4>
+                  <p class="text-brand-muted text-sm leading-relaxed">Launch of main DeFi features and ecosystem testing</p>
+                </div>
+                <div>
+                  <h4 class="font-orbitron font-black text-lg text-white mb-2">SocialFi Platform</h4>
+                  <p class="text-brand-muted text-sm leading-relaxed">Creator monetization tools and tokenized communities. Early access for creators</p>
+                </div>
+                <div>
+                  <h4 class="font-orbitron font-black text-lg text-white mb-2">Early Monetization Access</h4>
+                  <p class="text-brand-muted text-sm leading-relaxed">Selected creators can test content monetization and brand token tools</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase: Mainnet -->
+          <div class="roadmap-phase relative mb-12 md:mb-16" data-phase="mainnet">
+            <div class="flex flex-col gap-4 lg:grid lg:grid-cols-[240px_80px_1fr] xl:grid-cols-[280px_80px_1fr] lg:gap-x-8 lg:items-start">
+              <h3 class="font-orbitron font-black text-xl md:text-2xl text-white lg:text-right lg:pt-5 roadmap-label">Mainnet</h3>
+              <div class="shrink-0 w-[80px] h-[80px] rounded-full bg-brand-card border border-brand-border flex items-center justify-center relative z-10 roadmap-icon mx-auto lg:mx-0">
+                <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
+              </div>
+              <div class="flex flex-col gap-6 lg:pt-1 roadmap-content">
+                <div>
+                  <h4 class="font-orbitron font-black text-lg text-white mb-2">Full Platform Launch</h4>
+                  <p class="text-brand-muted text-sm leading-relaxed">Alton Mainnet goes live with complete social + DeFi infrastructure</p>
+                </div>
+                <div>
+                  <h4 class="font-orbitron font-black text-lg text-white mb-2">Token Launch</h4>
+                  <p class="text-brand-muted text-sm leading-relaxed">Alton token launch via native launchpad. Listing on external exchanges</p>
+                </div>
+                <div>
+                  <h4 class="font-orbitron font-black text-lg text-white mb-2">Brand Clans</h4>
+                  <p class="text-brand-muted text-sm leading-relaxed">Full activation of brand token economies and community-driven rewards</p>
+                </div>
+                <div>
+                  <h4 class="font-orbitron font-black text-lg text-white mb-2">Global Expansion</h4>
+                  <p class="text-brand-muted text-sm leading-relaxed">Open access for creators and users worldwide</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phase: Future -->
+          <div class="roadmap-phase relative" data-phase="future">
+            <div class="flex flex-col gap-4 lg:grid lg:grid-cols-[240px_80px_1fr] xl:grid-cols-[280px_80px_1fr] lg:gap-x-8 lg:items-start">
+              <h3 class="font-orbitron font-black text-xl md:text-2xl text-white lg:text-right lg:pt-5 roadmap-label">Future</h3>
+              <div class="shrink-0 w-[80px] h-[80px] rounded-full bg-brand-card border border-brand-border flex items-center justify-center relative z-10 roadmap-icon mx-auto lg:mx-0">
+                <svg class="w-8 h-8 text-white" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.912 5.813a2 2 0 001.272 1.272L21 12l-5.816 1.915a2 2 0 00-1.272 1.272L12 21l-1.912-5.813a2 2 0 00-1.272-1.272L3 12l5.816-1.915a2 2 0 001.272-1.272L12 3z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+              </div>
+              <div class="flex flex-col gap-6 lg:pt-1 roadmap-content">
+                <div>
+                  <h4 class="font-orbitron font-black text-lg text-white mb-2">Advanced Recommendation Engine</h4>
+                  <p class="text-brand-muted text-sm leading-relaxed">Improved AI-powered personalization. Smarter content and community matching</p>
+                </div>
+                <div>
+                  <h4 class="font-orbitron font-black text-lg text-white mb-2">Monetization Expansion</h4>
+                  <p class="text-brand-muted text-sm leading-relaxed">Native advertising and paid promotion powered by AI with relevant targeting</p>
+                </div>
+                <div>
+                  <h4 class="font-orbitron font-black text-lg text-white mb-2">CLOB Trading</h4>
+                  <p class="text-brand-muted text-sm leading-relaxed">Advanced order book trading functionality</p>
+                </div>
+                <div>
+                  <h4 class="font-orbitron font-black text-lg text-white mb-2">Alton Bank</h4>
+                  <p class="text-brand-muted text-sm leading-relaxed">Alton will connect fiat, crypto, and everyday payments in one system for users and creators</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CTA ====== -->
+    <section id="cta" class="py-16 md:py-24 px-4 md:px-8">
+      <div class="max-w-[1152px] mx-auto bg-brand-card border border-brand-border rounded-[32px] md:rounded-card-lg overflow-hidden relative px-6 md:px-12 py-16 md:py-20 text-center lg:text-left">
+        <div class="glow-blob w-[290px] h-[290px] -left-[200px] bottom-[-50px] opacity-40"></div>
+        <div class="glow-blob w-[290px] h-[290px] -right-[200px] bottom-[-50px] opacity-40"></div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 lg:gap-8 relative z-10 lg:items-start">
+          <h2 class="font-orbitron font-black text-[28px] md:text-[48px] leading-[1.2] text-white fade-up lg:col-span-1 text-center lg:text-left">Join the Ecosystem Today</h2>
+          <div class="lg:col-span-2 flex flex-col items-center lg:items-start text-center lg:text-left">
+            <p class="text-brand-muted text-base leading-relaxed mt-0 lg:mt-1 fade-up">Alton is growing with early builders and creators</p>
+
+            <div class="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center lg:justify-start w-full mt-8 md:mt-10 fade-up">
+              <a href="http://waitlist.altons.trade/" class="inline-flex items-center justify-center bg-brand-accent text-white text-base md:text-lg font-medium px-6 py-4 rounded-lg hover:bg-brand-accent-hover active:bg-brand-accent-active transition-colors duration-200 w-full sm:w-[360px]">
+                Join waitlist for monetization
+              </a>
+              <a href="https://bit.ly/altontrader" class="inline-flex items-center justify-center bg-[#1b1d2f] border border-brand-border text-white text-base md:text-lg font-medium px-6 py-4 rounded-lg hover:bg-white/5 transition-colors w-full sm:w-[360px]">
+                Mining Alton token
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ====== FOOTER ====== -->
+  <footer class="bg-brand-footer border-t border-brand-border py-12 md:py-16 px-4 md:px-8">
+    <div class="max-w-[1440px] mx-auto px-2 lg:px-[144px]">
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-12">
+        <!-- Col 1: Logo & socials -->
+        <div class="flex flex-col gap-6 lg:flex-1 lg:min-w-0">
+          <img src="/asset/new/logo-footer.svg" alt="Alton" class="h-[80px] md:h-[101px] w-auto self-start" />
+          
+        </div>
+
+        <!-- Col 2: Tagline — по центру на десктопе -->
+        <div class="flex flex-col gap-4 lg:flex-1 lg:min-w-0 lg:px-4">
+          <ul class="flex flex-wrap items-center gap-x-10 gap-y-4 list-none p-0 m-0" aria-label="Social links">
+            <li>
+              <a href="https://t.me/alton_trade" target="_blank" rel="nofollow noopener noreferrer" class="text-brand-muted hover:text-white transition-colors inline-flex" aria-label="Telegram">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M11.944 0A12 12 0 000 12a12 12 0 0012 12 12 12 0 0012-12A12 12 0 0012 0a12 12 0 00-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 01.171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.479.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://youtube.com/@THEALTONOFFICIAL" target="_blank" rel="nofollow noopener noreferrer" class="text-brand-muted hover:text-white transition-colors inline-flex" aria-label="YouTube">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/TradeAlton" target="_blank" rel="nofollow noopener noreferrer" class="text-brand-muted hover:text-white transition-colors inline-flex" aria-label="X">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com/alton.trade/" target="_blank" rel="nofollow noopener noreferrer" class="text-brand-muted hover:text-white transition-colors inline-flex" aria-label="Instagram">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 11-2.881 0 1.44 1.44 0 012.881 0z"/></svg>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/company/alton-trade" target="_blank" rel="nofollow noopener noreferrer" class="text-brand-muted hover:text-white transition-colors inline-flex" aria-label="LinkedIn">
+                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 110-4.125 2.062 2.062 0 010 4.125zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+            </li>
+          </ul>
+          <p class="text-brand-muted text-base leading-relaxed max-w-[371px] mx-auto">
+            The Decentralized Social Platform. Create content, launch your own token and build a community economy.
+          </p>
+        </div>
+
+        <!-- Col 3: Resources -->
+        <div class="flex flex-col gap-4 lg:flex-1 lg:min-w-0 lg:items-end lg:text-right">
+          <h3 class="font-orbitron font-black text-lg text-white">Resources</h3>
+          <div class="flex flex-wrap gap-8 md:gap-10 lg:justify-end">
+            <a href="https://alton-trade.gitbook.io/whitepaper" target="_blank" rel="nofollow" class="flex items-center gap-2.5 text-brand-muted hover:text-white transition-colors">
+              <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span class="text-base">Whitepaper</span>
+            </a>
+            <a href="https://www.crunchbase.com/organization/alton-platform" target="_blank" rel="nofollow" class="flex items-center gap-2.5 text-brand-muted hover:text-white transition-colors">
+              <svg class="w-5 h-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <span class="text-base">CrunchBase</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-brand-border pt-6">
+        <p class="text-brand-muted text-base">2026 (c) Alton Platform inc</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ====== JAVASCRIPT ====== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+      // === Liquid Glass Header ===
+      const header = document.getElementById('header');
+      const onScroll = () => {
+        if (window.scrollY > 80) {
+          header.classList.add('glass-active');
+        } else {
+          header.classList.remove('glass-active');
+        }
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+
+      // === Mobile Menu ===
+      const burger = document.getElementById('burger');
+      const mobileNav = document.getElementById('mobile-nav');
+      const burgerLines = burger.querySelectorAll('.burger-line');
+
+      burger.addEventListener('click', () => {
+        const isOpen = !mobileNav.classList.contains('hidden');
+        mobileNav.classList.toggle('hidden');
+        if (!isOpen) {
+          burgerLines[0].style.transform = 'rotate(45deg) translate(4px, 4px)';
+          burgerLines[1].style.opacity = '0';
+          burgerLines[2].style.transform = 'rotate(-45deg) translate(4px, -4px)';
+        } else {
+          burgerLines[0].style.transform = '';
+          burgerLines[1].style.opacity = '1';
+          burgerLines[2].style.transform = '';
+        }
+      });
+
+      document.querySelectorAll('.mobile-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileNav.classList.add('hidden');
+          burgerLines[0].style.transform = '';
+          burgerLines[1].style.opacity = '1';
+          burgerLines[2].style.transform = '';
+        });
+      });
+
+      // === Scroll animations (IntersectionObserver) ===
+      const fadeElements = document.querySelectorAll('.fade-up');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 80);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+      fadeElements.forEach(el => observer.observe(el));
+
+      // === Tab Switcher (How it works) ===
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const panelUsers = document.getElementById('panel-users');
+      const panelCreators = document.getElementById('panel-creators');
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach(b => {
+            b.classList.remove('tab-active');
+            b.classList.add('bg-brand-card', 'text-white', 'font-normal');
+            b.classList.remove('font-semibold');
+          });
+          btn.classList.add('tab-active', 'font-semibold');
+          btn.classList.remove('bg-brand-card', 'text-white', 'font-normal');
+
+          const tab = btn.dataset.tab;
+          const showPanel = tab === 'users' ? panelUsers : panelCreators;
+          const hidePanel = tab === 'users' ? panelCreators : panelUsers;
+          hidePanel.classList.add('hidden');
+          showPanel.classList.remove('hidden');
+          showPanel.querySelectorAll('.fade-up:not(.visible)').forEach((el, i) => {
+            setTimeout(() => el.classList.add('visible'), i * 80);
+          });
+        });
+      });
+
+      // === Roadmap scroll animation ===
+      const roadmapTimeline = document.getElementById('roadmap-timeline');
+      const phases = document.querySelectorAll('.roadmap-phase');
+
+      const phaseObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('phase-visible');
+          }
+        });
+      }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
+      phases.forEach(p => phaseObserver.observe(p));
+
+      const segGreen = document.getElementById('seg-green');
+      const segYellow = document.getElementById('seg-yellow');
+      const segGray = document.getElementById('seg-gray');
+
+      const updateRoadmapProgress = () => {
+        if (!roadmapTimeline || !segGreen) return;
+        const timelineRect = roadmapTimeline.getBoundingClientRect();
+        const totalH = timelineRect.height;
+        if (totalH <= 0) return;
+
+        const icons = roadmapTimeline.querySelectorAll('.roadmap-icon');
+        if (icons.length < 3) return;
+
+        const iconCenters = Array.from(icons).map(icon => {
+          const r = icon.getBoundingClientRect();
+          return r.top + r.height / 2 - timelineRect.top;
+        });
+
+        const seg1Top = 0;
+        const seg1MaxH = iconCenters[0] + 20;
+        const seg2Top = seg1MaxH;
+        const seg2MaxH = iconCenters[1] + 20 - seg2Top;
+        const seg3Top = seg2Top + seg2MaxH;
+        const seg3MaxH = totalH - seg3Top;
+
+        const scrolled = Math.max(0, -timelineRect.top + window.innerHeight * 0.5);
+        const progress = Math.min(1, Math.max(0, scrolled / totalH));
+        const fillPx = progress * totalH;
+
+        const g = Math.max(0, Math.min(seg1MaxH, fillPx - seg1Top));
+        segGreen.style.top = seg1Top + 'px';
+        segGreen.style.height = g + 'px';
+
+        const y = Math.max(0, Math.min(seg2MaxH, fillPx - seg2Top));
+        segYellow.style.top = seg2Top + 'px';
+        segYellow.style.height = y + 'px';
+
+        const gr = Math.max(0, Math.min(seg3MaxH, fillPx - seg3Top));
+        segGray.style.top = seg3Top + 'px';
+        segGray.style.height = gr + 'px';
+      };
+      window.addEventListener('scroll', updateRoadmapProgress, { passive: true });
+      window.addEventListener('resize', updateRoadmapProgress);
+      updateRoadmapProgress();
+
+      // === Smooth Scroll for anchor links ===
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          const targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            const headerHeight = 80;
+            const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+            window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+          }
+        });
+      });
+
+    });
+  </script>
+
+</body>
 </html>
