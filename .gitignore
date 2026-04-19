@@ -7,6 +7,10 @@ node_modules/
 .next/
 out/
 
+# OpenNext / Cloudflare Workers
+.open-next/
+.wrangler/
+
 # Production / build artifacts
 dist/
 build/
@@ -14,6 +18,7 @@ build/
 # Environment (локальные секреты)
 .env
 .env*.local
+.dev.vars
 
 # Logs & debug
 npm-debug.log*
