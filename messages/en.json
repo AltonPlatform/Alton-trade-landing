@@ -1,0 +1,275 @@
+{
+  "Meta": {
+    "title": "Alton — The Decentralized Social Platform",
+    "description": "Create content, launch your own token and build a community economy — all inside one ecosystem.",
+    "ogTitle": "Alton — The Decentralized Social Platform",
+    "siteName": "Alton",
+    "twitterTitle": "Alton — The Decentralized Social Platform",
+    "twitterDescription": "Create content, launch your own token and build a community economy — all inside one ecosystem.",
+    "author": "Alton Platform"
+  },
+  "Lang": {
+    "en": "ENG",
+    "ru": "RU",
+    "uk": "UK",
+    "switcherAria": "Choose language"
+  },
+  "Nav": {
+    "solution": "Solution",
+    "ecosystem": "Ecosystem",
+    "howItWorks": "How it works",
+    "whyAlton": "Why Alton",
+    "roadmap": "Roadmap",
+    "joinWaitlist": "Join waitlist",
+    "menuToggle": "Toggle menu"
+  },
+  "Hero": {
+    "title": "The Decentralized Social Platform",
+    "subtitle": "Create content, launch your own token and build a community economy — all inside one ecosystem.",
+    "exploreEcosystem": "Explore Ecosystem",
+    "launchDate": "Launch date —",
+    "launchQuarter": "Q3",
+    "launchYear": ", 2026",
+    "waitlistTeaserLine1": "Claim your spot on the waitlist.",
+    "waitlistTeaserLine2": "Enjoy exclusive rewards in the first release."
+  },
+  "Problems": {
+    "title": "Problems",
+    "intro": "Millions of creators build audiences online, but most of the value goes to platforms",
+    "cards": [
+      {
+        "title": "Creators don't own their audience",
+        "body": "Platforms control reach, algorithms and monetization."
+      },
+      {
+        "title": "Monetization is limited",
+        "body": "High fees and few tools make it hard for creators to earn."
+      },
+      {
+        "title": "Communities get no value",
+        "body": "Fans help creators grow but don't share in their success."
+      },
+      {
+        "title": "Web3 is too complex",
+        "body": "Wallets, gas fees and crypto mechanics create friction for new users."
+      }
+    ]
+  },
+  "Solution": {
+    "title": "Solution",
+    "intro": "A simple platform where creators build communities, launch tokens and grow together with their audience",
+    "cards": [
+      {
+        "title": "One social platform",
+        "body": "Content, community and token economy in one place."
+      },
+      {
+        "title": "Creators own their audience",
+        "body": "Direct connection with fans and new ways to monetize."
+      },
+      {
+        "title": "Built for creator economies",
+        "body": "Infrastructure for tokenized communities on TON."
+      },
+      {
+        "title": "Simple Web3 experience",
+        "body": "Start using Web3 tools easily with Alton Academy"
+      }
+    ]
+  },
+  "Ecosystem": {
+    "title": "Ecosystem",
+    "intro": "Three applications that power social creation, token economies and onboarding in crypto",
+    "socialTitle": "Alton — Social Platform",
+    "socialLead": "Platform for creators to publish content and build tokenized communities.",
+    "socialBullets": [
+      "Content monetization",
+      "Brand (Community) tokens",
+      "Direct engagement with fans"
+    ],
+    "web3Title": "Alton WEB3",
+    "web3Lead": "DeFi layer for trading ecosystem and creator token economies.",
+    "web3Bullets": [
+      "Token trading",
+      "Liquidity & farming",
+      "Brand token infrastructure"
+    ],
+    "traderTitle": "Alton Trader",
+    "traderLead": "Learn Web3, earn tokens and join brand communities",
+    "traderBullets": [
+      "Mining Alton token by completing tasks",
+      "Learn WEB3 through Alton Academy",
+      "Join brand clans and get rewards"
+    ],
+    "ipadAlt": "Alton Social Platform",
+    "web3Alt": "Alton WEB3",
+    "traderAlt": "Alton Trader"
+  },
+  "HowItWorks": {
+    "title": "How it works",
+    "forUsers": "For Users",
+    "forCreators": "For Creators",
+    "steps": {
+      "one": "STEP ONE",
+      "two": "STEP TWO",
+      "three": "STEP THREE",
+      "four": "STEP FOUR"
+    },
+    "users": [
+      {
+        "title": "Join Alton Academy",
+        "body": "Complete tasks and earn rewards while learning Web3."
+      },
+      {
+        "title": "Knowledge in practice",
+        "body": "Earn points for future drops and access the MVP social platform."
+      },
+      {
+        "title": "Explore token trading",
+        "body": "Join brand clans and complete brand tasks to earn rewards"
+      },
+      {
+        "title": "Support creators",
+        "body": "Earn from participation. Actively engage inside tokenized communities"
+      }
+    ],
+    "creators": [
+      {
+        "title": "Get waitlist access to the MVP",
+        "body": "Prepare for monetization before mainnet launch"
+      },
+      {
+        "title": "Create content",
+        "body": "Offer premium posts and subscriptions. Earn from views and community support"
+      },
+      {
+        "title": "Create your brand token",
+        "body": "Launch BrandPad with your community. Build your brand clan and create tasks for followers."
+      },
+      {
+        "title": "Compete with other brand clans",
+        "body": "Increase token demand. Scale your community and revenue"
+      }
+    ]
+  },
+  "WhyAlton": {
+    "title": "Why Alton",
+    "intro": "A simple and powerful Ecosystem for creators and communities.",
+    "features": [
+      {
+        "title": "Smart Recommendations",
+        "body": "AI-powered system that shows users the most relevant content and connects them with the right communities."
+      },
+      {
+        "title": "Web 2.5\nPlatform",
+        "body": "Combines familiar social experience with decentralized data storage and Web3 ownership"
+      },
+      {
+        "title": "Creator & Community Economy",
+        "body": "Creators own their audience. Communities earn, participate and grow through tokenized tools."
+      }
+    ]
+  },
+  "Roadmap": {
+    "title": "Roadmap",
+    "phases": [
+      {
+        "key": "completed",
+        "label": "Completed",
+        "items": [
+          {
+            "title": "Alton Trader Beta",
+            "body": "Gamified onboarding app with integrated Academy. Live on Telegram"
+          },
+          {
+            "title": "Core Infrastructure",
+            "body": "Main smart contracts deployed for testnet. Decentralized storage architecture designed and implemented"
+          }
+        ]
+      },
+      {
+        "key": "near-term",
+        "label": "Near Term",
+        "items": [
+          {
+            "title": "Alton Testnet",
+            "body": "Launch of main DeFi features and ecosystem testing"
+          },
+          {
+            "title": "SocialFi Platform",
+            "body": "Creator monetization tools and tokenized communities. Early access for creators"
+          },
+          {
+            "title": "Early Monetization Access",
+            "body": "Selected creators can test content monetization and new features"
+          }
+        ]
+      },
+      {
+        "key": "mainnet",
+        "label": "Mainnet",
+        "items": [
+          {
+            "title": "Full Platform Launch",
+            "body": "Alton Mainnet goes live with complete social + DeFi infrastructure"
+          },
+          {
+            "title": "Token Launch",
+            "body": "Alton token launch via native launchpad. Listing on external exchanges"
+          },
+          {
+            "title": "Brand Clans",
+            "body": "Full activation of brand token economies and community-driven rewards"
+          },
+          {
+            "title": "Global Expansion",
+            "body": "Open access for creators and users worldwide"
+          }
+        ]
+      },
+      {
+        "key": "future",
+        "label": "Future",
+        "items": [
+          {
+            "title": "Advanced Recommendation Engine",
+            "body": "Improved AI-powered personalization. Smarter content and community matching"
+          },
+          {
+            "title": "Monetization Expansion",
+            "body": "Native advertising and paid promotion powered by AI with relevant targeting"
+          },
+          {
+            "title": "CLOB Trading",
+            "body": "Advanced order book trading functionality"
+          },
+          {
+            "title": "Alton Bank",
+            "body": "Alton will connect fiat, crypto, and everyday payments in one system for users and creators"
+          }
+        ]
+      }
+    ]
+  },
+  "CTA": {
+    "title": "Join the Ecosystem Today",
+    "subtitle": "Alton is growing with early builders and creators",
+    "waitlistLong": "Join waitlist for monetization",
+    "mining": "Mining Alton token"
+  },
+  "Footer": {
+    "tagline": "The Decentralized Social Platform. Create content, launch your own token and build a community economy.",
+    "resources": "Resources",
+    "whitepaper": "Whitepaper",
+    "crunchbase": "CrunchBase",
+    "copyright": "2026 (c) Alton Platform inc",
+    "socialAria": {
+      "telegram": "Telegram",
+      "youtube": "YouTube",
+      "x": "X",
+      "instagram": "Instagram",
+      "linkedin": "LinkedIn"
+    },
+    "logoAlt": "Alton"
+  }
+}

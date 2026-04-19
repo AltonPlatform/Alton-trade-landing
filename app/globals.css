@@ -1,0 +1,155 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-inter), sans-serif;
+  background: #101828;
+  color: #fff;
+}
+
+#header {
+  background-color: transparent;
+  backdrop-filter: blur(0px) saturate(100%);
+  -webkit-backdrop-filter: blur(0px) saturate(100%);
+  transition:
+    background-color 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    backdrop-filter 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    -webkit-backdrop-filter 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+#header.glass-active {
+  background-color: rgba(16, 24, 40, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+}
+
+.fade-up {
+  opacity: 0;
+  translate: 0 30px;
+  transition:
+    opacity 0.7s ease,
+    translate 0.7s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.glow-blob {
+  position: absolute;
+  border-radius: 9999px;
+  background: #313c4f;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.tab-active {
+  background: #fff;
+  color: #1b2537;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float 9s ease-in-out infinite;
+}
+
+@media (min-width: 1280px) {
+  img.ecosystem-ipad-mockup-right {
+    right: max(-20%, -100px);
+  }
+}
+
+.tab-panel {
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease;
+}
+
+.tab-panel.hidden {
+  display: none;
+}
+
+.roadmap-phase {
+  opacity: 0;
+  transform: translateY(40px);
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.roadmap-phase.phase-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.roadmap-icon {
+  transform: scale(0.6);
+  opacity: 0;
+  transition:
+    transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s,
+    opacity 0.4s ease 0.2s;
+}
+
+.roadmap-phase.phase-visible .roadmap-icon {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.roadmap-label {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition:
+    opacity 0.5s ease 0.1s,
+    transform 0.5s ease 0.1s;
+}
+
+.roadmap-phase.phase-visible .roadmap-label {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.roadmap-content {
+  opacity: 0;
+  transform: translateX(30px);
+  transition:
+    opacity 0.5s ease 0.3s,
+    transform 0.5s ease 0.3s;
+}
+
+.roadmap-phase.phase-visible .roadmap-content {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.roadmap-seg {
+  transition: height 0.12s linear;
+}
+
+html[data-display-font='orbitron'] .font-display {
+  font-family: var(--font-orbitron), sans-serif;
+  font-weight: 900;
+}
+
+html[data-display-font='play'] .font-display {
+  font-family: var(--font-play), sans-serif;
+  font-weight: 700;
+}
