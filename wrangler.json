@@ -6,8 +6,8 @@
   "compatibility_flags": ["nodejs_compat"],
   "routes": [
     {
-      "pattern": "altons.trade",
-      "custom_domain": true
+      "pattern": "altons.trade/*",
+      "zone_name": "altons.trade"
     }
   ],
   "dev": {
