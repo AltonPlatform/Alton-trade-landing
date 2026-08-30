@@ -5,10 +5,14 @@ import { routing } from '@/i18n/routing';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteBaseUrl();
-  return routing.locales.map((locale) => ({
-    url: `${base}${localePath(locale)}`,
-    lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
-    priority: locale === 'en' ? 1 : 0.9,
-  }));
+  const pages = ['', '/support'] as const;
+
+  return pages.flatMap((path) =>
+    routing.locales.map((locale) => ({
+      url: `${base}${localePath(locale, path)}`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: path === '' ? (locale === 'en' ? 1 : 0.9) : 0.7,
+    })),
+  );
 }

@@ -257,6 +257,20 @@
     "waitlistLong": "Join waitlist for monetization",
     "mining": "Mining Alton token"
   },
+  "Support": {
+    "metaTitle": "Support — Alton",
+    "metaDescription": "Contact Alton support by email or join our Telegram community for help with the app.",
+    "eyebrow": "Alton Support",
+    "title": "We're here to help",
+    "subtitle": "Reach our team by email or join the Telegram community for updates and assistance.",
+    "emailTitle": "Email",
+    "emailBody": "Write to us about account issues, app feedback, or partnership questions.",
+    "telegramTitle": "Telegram community",
+    "telegramBody": "Join our official group for news, announcements, and community support.",
+    "telegramCta": "t.me/altonHolders",
+    "responseNote": "We typically respond to email within 1–2 business days. For faster community help, use Telegram.",
+    "backHome": "Back to home"
+  },
   "Footer": {
     "tagline": "The Decentralized Social Platform. Create content, launch your own token and build a community economy.",
     "resources": "Resources",
