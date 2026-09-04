@@ -271,6 +271,38 @@
     "responseNote": "We typically respond to email within 1–2 business days. For faster community help, use Telegram.",
     "backHome": "Back to home"
   },
+  "DeleteAccount": {
+    "metaTitle": "Alton Trader — Account Deletion",
+    "metaDescription": "Request deletion of your Alton Trader account and associated data. Learn what we delete, what we may retain, and how long processing takes.",
+    "eyebrow": "Alton Trader",
+    "title": "Account deletion",
+    "subtitle": "Request deletion of your Alton Trader account and associated data.",
+    "appLabel": "App",
+    "appName": "Alton Trader",
+    "developerLabel": "Developer",
+    "developerName": "Alton Platform",
+    "howTitle": "How to request deletion",
+    "howSteps": [
+      "Send an email to {email} from the email associated with your account (or include your Google / Apple / Telegram account identifier used in the app).",
+      "Use the subject: “Alton Trader account deletion request”.",
+      "We will verify account ownership and process your request."
+    ],
+    "emailCta": "Email support",
+    "emailSubject": "Alton Trader account deletion request",
+    "deleteTitle": "What we delete",
+    "deleteItems": [
+      "Your Alton Trader account profile and linked login identifiers",
+      "In-app progress, missions, balances, and related user records stored for Alton Trader"
+    ],
+    "retainTitle": "What we may retain temporarily",
+    "retainItems": [
+      "Limited records required for legal, security, fraud-prevention, or accounting purposes",
+      "These records are kept only as long as necessary, then deleted or anonymized"
+    ],
+    "timelineTitle": "Timeline",
+    "timelineBody": "Verified deletion requests are processed within 30 days.",
+    "privacyNote": "For questions about how we handle personal data, contact us at {email}."
+  },
   "Footer": {
     "tagline": "The Decentralized Social Platform. Create content, launch your own token and build a community economy.",
     "resources": "Resources",

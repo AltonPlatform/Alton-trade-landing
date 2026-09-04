@@ -10,7 +10,12 @@ import { LocaleFlag } from './LocaleFlag';
 
 const locales = ['en', 'ru', 'uk'] as const;
 
-export function SupportHeader() {
+type SupportHeaderProps = {
+  /** Path for locale switcher links (e.g. `/support`, `/delete-account`). */
+  path?: string;
+};
+
+export function SupportHeader({ path = '/support' }: SupportHeaderProps) {
   const t = useTranslations('Support');
   const tLang = useTranslations('Lang');
   const locale = useLocale();
@@ -101,7 +106,7 @@ export function SupportHeader() {
                   {locales.map((l) => (
                     <li key={l} role="option" aria-selected={locale === l}>
                       <Link
-                        href="/support"
+                        href={path}
                         locale={l}
                         className={`flex items-center gap-2 px-4 py-2 text-sm text-white hover:bg-white/10 transition-colors ${
                           locale === l ? 'bg-white/10 font-semibold' : ''
